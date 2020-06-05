@@ -1,118 +1,75 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 800px;">
+
+    <div class="tab-container">
+
+        <div class="tab-content clearfix" id="tab-register">
+            <div class="card nobottommargin">
+                <div class="card-body" style="padding: 40px;">
+                    <h3>Registrarme</h3>
+
+                    <form id="register-form" name="register-form" class="nobottommargin"
+                        action="{{ route('register') }}" method="post">
+
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="col_full col_last">
+                            <label for="register-form-username">Correo:</label>
+                            <input type="text" value="jard1209@gmail.com" disabled="disabled"
+                                id="register-form-username" name="email" value="alias@correo.xyz"
+                                class="form-control" />
                         </div>
 
-                        <div class="form-group row">
-                            <label for="apellidoPaterno" class="col-md-4 col-form-label text-md-right">Primer apellido</label>
-
-                            <div class="col-md-6">
-                                <input id="apellidoPaterno" type="text" class="form-control @error('apellido_paterno') is-invalid @enderror" name="apellido_paterno" value="{{ old('apellido_paterno') }}" required autocomplete="apellido_paterno" autofocus>
-
-                                @error('apellido_paterno')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="col_full">
+                            <label for="register-form-name">Nombre:</label>
+                            <input type="text" id="name" name="register-form-name" value="" class="form-control" />
                         </div>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Segundo apellido</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('apellido_materno') is-invalid @enderror" name="apellido_materno" value="{{ old('apellido_materno') }}" required autocomplete="apellido_materno" autofocus>
-
-                                @error('apellido_materno')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="col_full col_last">
+                            <label for="register-form-email">Primer Apellido:</label>
+                            <input type="text" id="register-form-email" name="apellido_paterno" value=""
+                                class="form-control" />
                         </div>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">RFC</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('rfc') is-invalid @enderror" name="rfc" value="{{ old('rfc') }}" required autocomplete="rfc" autofocus>
-
-                                @error('rfc')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="col_full">
+                            <label for="register-form-username">Segundo Apellido:</label>
+                            <input type="text" id="register-form-username" name="apellido_materno" value=""
+                                class="form-control" />
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="col_full col_last">
+                            <label for="register-form-phone">Contraseña:</label>
+                            <input type="text" id="register-form-phone" name="password" value="" class="form-control" />
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="col_full">
+                            <label for="register-form-password">Repetir Contraseña:</label>
+                            <input type="password" id="register-form-password" name="register-form-password" value=""
+                                class="form-control" />
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
+                        <div class="col_full col_last">
+                            <label for="register-form-repassword">RFC:</label>
+                            <input type="password" id="register-form-repassword" name="rfc" value=""
+                                class="form-control" />
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
-                                </button>
-                            </div>
+                        <div class="col_full nobottommargin">
+                            <button type="submit" class="button button-3d button-black nomargin"
+                                id="register-form-submit" name="register-form-submit"
+                                value="register">Registrarme</button>
                         </div>
+
                     </form>
                 </div>
             </div>
         </div>
+
     </div>
+
 </div>
+
 @endsection
