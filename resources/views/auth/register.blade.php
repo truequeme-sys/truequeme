@@ -28,7 +28,7 @@
                             <label for="register-form-username">Correo:</label>
                             <input type="email" value="jard1209@gmail.com"
                                 id="register-form-username" name="email" value="alias@correo.xyz"
-                                class="form-control" readonly/>
+                                class="form-control"/>
                         </div>
 
                         <div class="col_full">
