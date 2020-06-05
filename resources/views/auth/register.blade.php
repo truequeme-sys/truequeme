@@ -11,21 +11,29 @@
                 <div class="card-body" style="padding: 40px;">
                     <h3>Registrarme</h3>
 
-                    <form id="register-form" name="register-form" class="nobottommargin"
-                        action="{{ route('register') }}" method="post">
-
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
 
                         <div class="col_full col_last">
                             <label for="register-form-username">Correo:</label>
-                            <input type="text" value="jard1209@gmail.com" disabled="disabled"
+                            <input type="email" value="jard1209@gmail.com"
                                 id="register-form-username" name="email" value="alias@correo.xyz"
-                                class="form-control" />
+                                class="form-control" readonly/>
                         </div>
 
                         <div class="col_full">
                             <label for="register-form-name">Nombre:</label>
-                            <input type="text" id="name" name="register-form-name" value="" class="form-control" />
+                            <input type="text" id="name" name="name" value="" class="form-control" />
                         </div>
 
                         <div class="col_full col_last">
@@ -47,7 +55,7 @@
 
                         <div class="col_full">
                             <label for="register-form-password">Repetir Contraseña:</label>
-                            <input type="password" id="register-form-password" name="register-form-password" value=""
+                            <input type="password" id="register-form-password" name="password_confirmation" value=""
                                 class="form-control" />
                         </div>
 
