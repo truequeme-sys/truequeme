@@ -15,13 +15,13 @@
 
                         <div class="col_full">
                             <label for="login-form-username">Usuario:</label>
-                            <input type="text" id="login-form-username" name="login-form-username" value=""
+                            <input type="text" id="login-form-username" name="email" value=""
                                 class="form-control" />
                         </div>
 
                         <div class="col_full col_last">
                             <label for="login-form-password">Contraseña:</label>
-                            <input type="password" id="login-form-password" name="login-form-password" value=""
+                            <input type="password" id="login-form-password" name="password" value=""
                                 class="form-control" />
                         </div>
 
