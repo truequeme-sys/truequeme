@@ -28,7 +28,7 @@
                         <div class="col_full nobottommargin">
                             <button class="button button-3d button-black nomargin" id="login-form-submit"
                                 name="login-form-submit" value="login">Login</button>
-                            <a href="#" class="fright">Olvidé mi contraseña</a>
+                            <a href="{{ route('password.request') }}" class="fright">Olvidé mi contraseña</a>
                         </div>
 
                     </form>
