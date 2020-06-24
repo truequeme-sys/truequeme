@@ -3,19 +3,19 @@
 -----------------------------------------------------------------*/
 
 @media (min-width: 576px) {
-	.container { max-width: 400px; }
+	.container { max-width: 540px; }
 }
 
 @media (min-width: 768px) {
-	.container { max-width: 400px; }
+	.container { max-width: 750px; }
 }
 
 @media (min-width: 992px) {
-	.container { max-width: 400px; }
+	.container { max-width: 970px; }
 }
 
 @media (min-width: 1200px) {
-	.container { max-width: 400px; }
+	.container { max-width: 1170px; }
 }
 
 
@@ -3443,7 +3443,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 
 .content-wrap {
 	position: relative;
-	padding: 20px 0;
+	padding: 80px 0;
 }
 
 #content .container { position: relative; }
@@ -8433,7 +8433,7 @@ body:not(.device-touch) .on-hover.i-overlay {
 	height: 40px;
 	font-size: 20px;
 	line-height: 38px !important;
-	color: #555;
+	color: #FFFFFF;
 	text-shadow: none;
 	border: 1px solid #AAA;
 	border-radius: 3px;
@@ -8517,7 +8517,7 @@ body:not(.device-touch) .social-icon i {
 .social-icon.si-small:hover i:first-child { margin-top: -30px; }
 
 .social-icon:hover {
-	color: #555;
+	color: #FFFFFF;
 	border-color: transparent;
 }
 
@@ -8566,7 +8566,15 @@ body:not(.device-touch) .social-icon i {
 	font-size: 15px;
 }
 
+.si-pen:hover,
+.si-colored.si-pen { background-color: #00b1e1 !important; }
+.si-search:hover,
+.si-colored.si-search { background-color: #d83ab1 !important; }
 .si-facebook:hover,
+.si-colored.si-briefcase { background-color: #05cc7c !important; }
+.si-briefcase:hover,
+.si-colored.si-user-plus { background-color: #ffc643 !important; }
+.si-user-plus:hover,
 .si-colored.si-facebook { background-color: #3B5998 !important; }
 .si-delicious:hover,
 .si-colored.si-delicious { background-color: #205CC0 !important; }
@@ -8719,6 +8727,10 @@ body:not(.device-touch) .social-icon i {
 /* Social Icons Text Color
 -----------------------------------------------------------------*/
 
+.si-text-color.si-pen i { color: #00b1e1; }
+.si-text-color.si-search i { color: #042f57; }
+.si-text-color.si-briefcase i { color: #05cc7c; }
+.si-text-color.user-plus i { color: #ffc643; }
 .si-text-color.si-facebook i { color: #3B5998; }
 .si-text-color.si-delicious i { color: #205CC0; }
 .si-text-color.si-paypal i { color: #00588B; }
@@ -11213,7 +11225,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #333;
+	color: #042f57;
 }
 
 .emphasis-title h1,

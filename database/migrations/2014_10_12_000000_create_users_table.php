@@ -20,6 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('apellido_paterno', 50);
             $table->string('apellido_materno', 50)->nullable();
             $table->string('rfc', 13);
+            $table->string('telefono', 11)->nullable();
+            $table->string('celular', 11)->nullable();
+            $table->string('whatsapp', 11)->nullable();
+            $table->string('foto',50)->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
