@@ -180,8 +180,8 @@
             @csrf
             <div class="modal-body">
                 <!-- CUERPO DEL MENSAJE -->
-                <textarea name="textarea" rows="10" cols="50"
-                    class="form-control">Escribe las áreas en las que te especializas</textarea>
+                <textarea name="descripcion" rows="10" cols="50"
+                    class="form-control">{{ $user->especialidad()->first() ? $user->especialidad()->first()->descripcion : 'Escribe las áreas en las que te especializas' }}</textarea>
             </div>
             <div class="modal-footer">
                 <!-- PIE -->

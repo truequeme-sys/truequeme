@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Especialidad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EspecialidadController extends Controller
 {
@@ -34,7 +36,14 @@ class EspecialidadController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->input());
+        $user = Auth::user();
+        $especialidad = Especialidad::firstOrNew([
+            'user_id' => $user->id
+        ]);
+        $especialidad->descripcion = $request->descripcion;
+        $especialidad->save();
+
+        return redirect()->route('perfil.edit');
     }
 
     /**

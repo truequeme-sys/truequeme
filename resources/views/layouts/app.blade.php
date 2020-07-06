@@ -81,8 +81,8 @@
 						<!-- Logo
 						============================================= -->
 						<div id="logo">
-							<a href="index.html" class="standard-logo" data-dark-logo="{{url('images/logo-dark.png')}}"><img src="{{url('images/logo.png')}}" alt="Truequeme"></a>
-							<a href="index.html" class="retina-logo" data-dark-logo="{{url('images/logo-dark@2x.png')}}"><img src="{{url('images/logo@2x.png')}}" alt="Truequeme"></a>
+							<a href="{{ route('home') }}" class="standard-logo" data-dark-logo="{{url('images/logo-dark.png')}}"><img src="{{url('images/logo.png')}}" alt="Truequeme"></a>
+							<a href="{{ route('home') }}" class="retina-logo" data-dark-logo="{{url('images/logo-dark@2x.png')}}"><img src="{{url('images/logo@2x.png')}}" alt="Truequeme"></a>
 						</div><!-- #logo end -->
 	
 						<!-- Primary Navigation
@@ -90,7 +90,7 @@
 						<nav id="primary-menu">
 	
 							<ul>
-								<li><a href="#"><div>Perfil</div></a></li>
+								<li><a href="{{ route('perfil.edit') }}"><div>Perfil</div></a></li>
 								<li><a href="#"><div>Publicar Trueque</div></a></li>
 								<li><a href="#"><div>Buscar Empresa</div></a></li>
 								<li><a href="#"><div>Buscar Trueque</div></a></li>	

@@ -55,4 +55,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Empresa');
     }
+
+    public function especialidad(){
+        return $this->hasOne('App\Especialidad');
+    }
 }
