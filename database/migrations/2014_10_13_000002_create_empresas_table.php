@@ -17,7 +17,7 @@ class CreateEmpresasTable extends Migration
             $table->id();
             $table->string('nombre', 50);
             $table->bigInteger('giro_id')->unsigned()->nullable();
-            $table->string('codigo_postal', 5);
+            $table->string('codigo_postal', 5)->nullable();
             $table->timestamps();
 
             $table->foreign('giro_id')->references('id')->on('giros')->onDelete('set null');

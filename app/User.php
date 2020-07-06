@@ -26,6 +26,7 @@ class User extends Authenticatable
         'celular',
         'whatsapp',
         'foto',
+        'codigo_postal'
     ];
 
     /**
@@ -45,4 +46,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // =============
+    // RELATIONSHIPS
+    // =============
+
+    public function empresa()
+    {
+        return $this->belongsTo('App\Empresa');
+    }
 }

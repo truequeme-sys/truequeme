@@ -8,81 +8,80 @@
 
         <div class="container clearfix">
 
-            <div class="form-widget">
+            {{-- <div class="form-widget"> --}}
 
                 <div class="form-result"></div>
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <form class="row" action="{{route('perfil.update')}}" method="post" enctype="multipart/form-data">
+                        <form class="row" action="{{route('perfil.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                             <div class="form-process"></div>
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-md-12 form-group" style="text-align: center;">
-                                        <img src="{{url('images/userPicture.png')}}" alt="Truequeme" width="200px" height="200px">
+                                        <img src="{{ $user->foto ? asset("storage/fotos/" . $user->foto) : url('images/userPicture.png')}}" alt="Truequeme" width="200px" height="200px">
                                     </div>
                                     <div class="col-md-12 form-group">
                                         <label>Subir imagen:</label>
-                                        <input type="file" id="jobs-application-resume" name="jobs-application-resume"
+                                        <input type="file" id="jobs-application-resume" name="foto"
                                             class="file-loading required" data-show-preview="false" />
                                     </div>
                                     <div class="col-md-6 form-group">
-                                        <label>Nombres:</label>
-                                        <input type="text" name="jobs-application-name" id="jobs-application-name"
-                                            class="form-control required" value="" placeholder="Nombres">
+                                        <label></label>
+                                        <input type="text" name="name" id="jobs-application-name"
+                                            class="form-control required" value="{{$user->name}}" placeholder="Nombres">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Primer Apellido:</label>
-                                        <input type="text" name="jobs-application-name" id="jobs-application-name"
-                                            class="form-control required" value="" placeholder="Primer apellido">
+                                        <input type="text" name="apellido_paterno" id="jobs-application-name"
+                                            class="form-control required" value="{{$user->apellido_paterno}}" placeholder="Primer apellido">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Segundo Apellido:</label>
-                                        <input type="text" name="jobs-application-name" id="jobs-application-name"
-                                            class="form-control required" value="" placeholder="Segundo apellido">
+                                        <input type="text" name="apellido_materno" id="jobs-application-name"
+                                            class="form-control required" value="{{$user->apellido_materno}}" placeholder="Segundo apellido">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Email:</label>
-                                        <input type="email" name="jobs-application-email" id="jobs-application-email"
-                                            class="form-control required" value="" placeholder="Correo electrónico">
+                                        <input type="email" name="email" id="jobs-application-email"
+                                            class="form-control required" value="{{$user->email}}" placeholder="Correo electrónico">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Whats:</label>
-                                        <input type="text" name="jobs-application-phone" id="jobs-application-phone"
-                                            class="form-control required" value="" placeholder="Teléfono Whatsapp">
+                                        <input type="text" name="whatsapp" id="jobs-application-phone"
+                                            class="form-control required" value="{{$user->celular}}" placeholder="Teléfono Whatsapp">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Teléfono:</label>
-                                        <input type="text" name="jobs-application-phone" id="jobs-application-phone"
-                                            class="form-control required" value="" placeholder="Teléfono fijo">
+                                        <input type="text" name="telefono" id="jobs-application-phone"
+                                            class="form-control required" value="{{$user->telefono}}" placeholder="Teléfono fijo">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Celular:</label>
-                                        <input type="text" name="jobs-application-phone" id="jobs-application-phone"
-                                            class="form-control required" value="" placeholder="Teléfono celular">
+                                        <input type="text" name="celular" id="jobs-application-phone"
+                                            class="form-control required" value="{{$user->celular}}" placeholder="Teléfono celular">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Nombre de la empresa:</label>
-                                        <input type="text" name="jobs-application-phone" id="jobs-application-phone"
-                                            class="form-control required" value="" placeholder="Nombre de la empresa">
+                                        <input type="text" name="nombre_empresa" id="jobs-application-phone"
+                                            class="form-control required" value="{{ $user->empresa()->first() ? $user->empresa()->first()->nombre : '' }}" placeholder="Nombre de la empresa">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Razón Social:</label>
-                                        <input type="text" name="jobs-application-phone" id="jobs-application-phone"
+                                        <input type="text" name="razon_social" id="jobs-application-phone"
                                             class="form-control required" value="" placeholder="Razón Social">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>RFC:</label>
-                                        <input type="text" name="jobs-application-location"
-                                            id="jobs-application-location" class="form-control" value=""
+                                        <input type="text" name="rfc"
+                                            id="jobs-application-location" class="form-control" value="{{ $user->rfc }}"
                                             placeholder="RFC">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label>Ubicación:</label>
-                                        <input type="text" name="jobs-application-location"
-                                            id="jobs-application-location" class="form-control" value=""
+                                        <input type="text" name="ubicacion"
+                                            id="jobs-application-location" class="form-control" value="{{ $user->codigo_postal }}"
                                             placeholder="C.P.">
                                     </div>
                                     <div class="col-md-6" style="text-align: right; padding-top: 35px;">
@@ -120,7 +119,7 @@
                             style="width: 140px;">Zonas</a>
                     </div>
                 </div>
-            </div>
+            {{-- </div> --}}
         </div>
     </div>
     </div>
@@ -177,6 +176,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
             </div>
+            <form action="{{ route('especialidades.store') }}" method="POST">
+            @csrf
             <div class="modal-body">
                 <!-- CUERPO DEL MENSAJE -->
                 <textarea name="textarea" rows="10" cols="50"
@@ -184,9 +185,9 @@
             </div>
             <div class="modal-footer">
                 <!-- PIE -->
-                <button class="btn btn-default btn btn-primary btn-lg" type="button"
-                    data-dismiss="modal">Guardar</button>
+                <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

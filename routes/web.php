@@ -20,8 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('about', 'AboutController@index');
+
 Route::get('/perfil', 'PerfilController@index')->middleware('auth');
-Route::post('/perfil', 'PerfilController@update')->name('perfil.update')->middleware('auth');
-Route::get('/perfil/editar', 'PerfilController@edit')->middleware('auth');
+Route::post('/perfil', 'PerfilController@store')->name('perfil.store')->middleware('auth');
+Route::get('/perfil/editar', 'PerfilController@edit')->name('perfil.edit')->middleware('auth');
+
+Route::post('especialidades', 'EspecialidadController@store')->name('especialidades.store');
+
 Route::get('trueques/publicar', 'TruequeController@create')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
