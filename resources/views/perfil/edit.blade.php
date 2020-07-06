@@ -225,39 +225,41 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
             </div>
+            <form action="{{route('certificados.store')}}" method="POST">
+            @csrf
             <div class="modal-body">
                 <!-- CUERPO DEL MENSAJE -->
                 <div class="col-md-12 form-group">
                     <label>Nombre:</label>
-                    <input type="text" name="jobs-application-name" id="jobs-application-name"
-                        class="form-control required" value="" placeholder="Nombre de la certificación">
+                    <input type="text" name="nombre" id="jobs-application-name"
+                        class="form-control required" value="{{ $user->certificado()->first() ? $user->certificado->nombre : '' }}" placeholder="Nombre de la certificación">
                 </div>
                 <div class="col-md-12 form-group">
                     <label>Institución:</label>
-                    <input type="text" name="jobs-application-name" id="jobs-application-name"
-                        class="form-control required" value="" placeholder="Nombre de la entidad emisora">
+                    <input type="text" name="institucion" id="jobs-application-name"
+                        class="form-control required" value="{{ $user->certificado ? $user->certificado->institucion : '' }}" placeholder="Nombre de la entidad emisora">
                 </div>
                 <div class="col-md-12 form-group">
-                    <label>Fecha:</label>
-                    <input type="text" name="jobs-application-name" id="jobs-application-name"
-                        class="form-control required" value="" placeholder="Fecha de expedición">
+                    <label>Fecha de expedición:</label>
+                    <input type="date" name="fecha_expedicion" id="jobs-application-name"
+                        class="form-control required" value="{{ $user->certificado ? $user->certificado->fecha_expedicion : '' }}" placeholder="Fecha de expedición">
                 </div>
                 <div class="col-md-12 form-group">
-                    <label>Duración:</label>
-                    <input type="email" name="jobs-application-email" id="jobs-application-email"
-                        class="form-control required" value="" placeholder="Validez del certificado">
+                    <label>Fecha de expiración:</label>
+                    <input type="date" name="fecha_expiracion" id="jobs-application-email"
+                        class="form-control required" value="{{ $user->certificado ? $user->certificado->fecha_expiracion : '' }}" placeholder="Validez del certificado">
                 </div>
                 <div class="col-md-12 form-group">
                     <label>País:</label>
-                    <input type="text" name="jobs-application-phone" id="jobs-application-phone"
-                        class="form-control required" value="" placeholder="País donde se emitió">
+                    <input type="text" name="pais" id="jobs-application-phone"
+                        class="form-control required" value="{{ $user->certificado ? $user->certificado->pais : '' }}" placeholder="País donde se emitió">
                 </div>
             </div>
             <div class="modal-footer">
                 <!-- PIE -->
-                <button class="btn btn-default btn btn-primary btn-lg" type="button"
-                    data-dismiss="modal">Guardar</button>
+                <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

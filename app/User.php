@@ -59,4 +59,8 @@ class User extends Authenticatable
     public function especialidad(){
         return $this->hasOne('App\Especialidad');
     }
+
+    public function certificado(){
+        return $this->hasOne('App\Certificado');
+    }
 }
