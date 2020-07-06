@@ -14,7 +14,9 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <form class="row" action="include/form.php" method="post" enctype="multipart/form-data">
+                        <form class="row" action="{{route('perfil.update')}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
                             <div class="form-process"></div>
                             <div class="col-12 form-group">
                                 <div class="row">

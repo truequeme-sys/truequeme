@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCertificadosTable extends Migration
+class CreateServiciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateCertificadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('certificados', function (Blueprint $table) {
+        Schema::create('servicios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre',50);
-            $table->string('institucion',50);
-            $table->date('fecha_expedicion');
-            $table->date('fecha_expiracion');
-            $table->string('pais', 30);
+            $table->string('nombre', 50);
+            $table->string('caracteristicas', 100);
+            $table->decimal('costo');
+            $table->string('lugar_entrega', 100);
+            $table->string('categoria', 100);
+            $table->boolean('tiene_garantia');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
@@ -34,6 +35,6 @@ class CreateCertificadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('certificados');
+        Schema::dropIfExists('servicios');
     }
 }

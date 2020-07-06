@@ -16,7 +16,10 @@ class CreateEspecialidadesTable extends Migration
         Schema::create('especialidades', function (Blueprint $table) {
             $table->id();
             $table->text('descripcion');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

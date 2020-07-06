@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('about', 'AboutController@index');
-Route::get('/perfil/editar', 'PerfilController@index')->middleware('auth');
+Route::get('/perfil', 'PerfilController@index')->middleware('auth');
+Route::post('/perfil', 'PerfilController@update')->name('perfil.update')->middleware('auth');
+Route::get('/perfil/editar', 'PerfilController@edit')->middleware('auth');
 Route::get('trueques/publicar', 'TruequeController@create')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

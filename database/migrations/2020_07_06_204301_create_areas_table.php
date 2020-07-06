@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCertificadosTable extends Migration
+class CreateAreasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateCertificadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('certificados', function (Blueprint $table) {
+        Schema::create('areas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre',50);
-            $table->string('institucion',50);
-            $table->date('fecha_expedicion');
-            $table->date('fecha_expiracion');
-            $table->string('pais', 30);
+            $table->text('descripcion');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->reference('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -34,6 +30,6 @@ class CreateCertificadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('certificados');
+        Schema::dropIfExists('areas');
     }
 }
