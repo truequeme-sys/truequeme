@@ -29,5 +29,8 @@ Route::post('especialidades', 'EspecialidadController@store')->name('especialida
 
 Route::post('certificados', 'CertificadoController@store')->name('certificados.store');
 
+Route::post('servicios', 'ServicioController@store')->name('servicios.store');
+
+
 Route::get('trueques/publicar', 'TruequeController@create')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

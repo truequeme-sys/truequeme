@@ -275,52 +275,54 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
             </div>
-            <div class="modal-body">
-                <!-- CUERPO DEL MENSAJE -->
-                <div class="col-md-12 form-group">
-                    <label>Nombre:</label>
-                    <input type="text" name="jobs-application-name" id="jobs-application-name"
-                        class="form-control required" value="" placeholder="Nombre del servicio o producto">
-                </div>
-                <div class="col-md-12 form-group">
-                    <label>Características:</label>
-                    <input type="text" name="jobs-application-name" id="jobs-application-name"
-                        class="form-control required" value="" placeholder="Características">
-                </div>
-                <div class="col-md-12 form-group">
-                    <label>Costo:</label>
-                    <input type="text" name="jobs-application-name" id="jobs-application-name"
-                        class="form-control required" value="" placeholder="Costo del servicio">
-                </div>
-                <div class="col-md-12 form-group">
-                    <label>Se puede entregar el servicio en:</label>
-                    <input type="email" name="jobs-application-email" id="jobs-application-email"
-                        class="form-control required" value="" placeholder="Lugar donde se puede entregar">
-                </div>
-                <div class="col-md-12 form-group">
-                    <label>Categoría:</label>
-                    <input type="text" name="jobs-application-phone" id="jobs-application-phone"
-                        class="form-control required" value="" placeholder="Categoría">
-                </div>
-                <div class="col-md-12 form-group">
-                    <label>Garantía:</label>
-                    <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-                        <label class="btn btn-outline-secondary ls0 nott">
-                            <input type="radio" name="jobs-application-gender" id="jobs-application-gender-male"
-                                autocomplete="off" value="Si"> Si
-                        </label>
-                        <label class="btn btn-outline-secondary ls0 nott">
-                            <input type="radio" name="jobs-application-gender" id="jobs-application-gender-female"
-                                autocomplete="off" value="No"> No
-                        </label>
+            <form action="{{route('servicios.store')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <!-- CUERPO DEL MENSAJE -->
+                    <div class="col-md-12 form-group">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" id="jobs-application-name"
+                            class="form-control required" value="{{ $user->servicio ? $user->servicio->nombre : '' }}" placeholder="Nombre del servicio o producto">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Características:</label>
+                        <input type="text" name="caracteristicas" id="jobs-application-name"
+                            class="form-control required" value="{{ $user->servicio ? $user->servicio->caracteristicas : '' }}" placeholder="Características">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Costo:</label>
+                        <input type="text" name="costo" id="jobs-application-name"
+                            class="form-control required" value="{{ $user->servicio ? $user->servicio->costo : '' }}" placeholder="Costo del servicio">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Se puede entregar el servicio en:</label>
+                        <input type="text" name="lugar_entrega" id="jobs-application-email"
+                            class="form-control required" value="{{ $user->servicio ? $user->servicio->lugar_entrega : '' }}" placeholder="Lugar donde se puede entregar">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Categoría:</label>
+                        <input type="text" name="categoria" id="jobs-application-phone"
+                            class="form-control required" value="{{ $user->servicio ? $user->servicio->categoria : '' }}" placeholder="Categoría">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Garantía:</label>
+                        <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                            <label class="btn btn-outline-secondary ls0 nott">
+                                <input type="radio" name="tiene_garantia" id="jobs-application-gender-male"
+                                    autocomplete="off" value="1" {{ $user->servicio ? $user->servicio->tiene_garantia == 1 ? 'checked' : '' : '' }}> Si
+                            </label>
+                            <label class="btn btn-outline-secondary ls0 nott">
+                                <input type="radio" name="jobs-application-gender" id="jobs-application-gender-female"
+                                    autocomplete="off" value="0" {{ $user->servicio ? $user->servicio->tiene_garantia == 0 ? 'checked' : '' : '' }}> No
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <!-- PIE -->
-                <button class="btn btn-default btn btn-primary btn-lg" type="button"
-                    data-dismiss="modal">Guardar</button>
-            </div>
+                <div class="modal-footer">
+                    <!-- PIE -->
+                    <button class="btn btn-default btn btn-primary btn-lg" type="submit" >Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

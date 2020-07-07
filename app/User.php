@@ -63,4 +63,8 @@ class User extends Authenticatable
     public function certificado(){
         return $this->hasOne('App\Certificado');
     }
+
+    public function servicio(){
+        return $this->hasOne('App\Servicio');
+    }
 }
