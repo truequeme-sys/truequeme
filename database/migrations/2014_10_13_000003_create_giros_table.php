@@ -16,7 +16,10 @@ class CreateGirosTable extends Migration
         Schema::create('giros', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 50);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

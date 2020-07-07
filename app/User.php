@@ -56,15 +56,38 @@ class User extends Authenticatable
         return $this->belongsTo('App\Empresa');
     }
 
-    public function especialidad(){
+    public function especialidad()
+    {
         return $this->hasOne('App\Especialidad');
     }
 
-    public function certificado(){
+    public function certificado()
+    {
         return $this->hasOne('App\Certificado');
     }
 
-    public function servicio(){
+    public function servicio()
+    {
         return $this->hasOne('App\Servicio');
+    }
+
+    public function area()
+    {
+        return $this->hasOne('App\Area');
+    }
+
+    public function giro()
+    {
+        return $this->hasOne('App\Giro');
+    }
+
+    public function clientes()
+    {
+        return $this->hasOne('App\Cliente');
+    }
+
+    public function zonasTrabajo()
+    {
+        return $this->hasOne('App\ZonaTrabajo');
     }
 }

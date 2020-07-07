@@ -27,10 +27,18 @@ Route::get('/perfil/editar', 'PerfilController@edit')->name('perfil.edit')->midd
 
 Route::post('especialidades', 'EspecialidadController@store')->name('especialidades.store')->middleware('auth');
 
-Route::post('certificados', 'CertificadoController@store')->name('certificados.store');
+Route::post('certificados', 'CertificadoController@store')->name('certificados.store')->middleware('auth');
 
-Route::post('servicios', 'ServicioController@store')->name('servicios.store');
+Route::post('servicios', 'ServicioController@store')->name('servicios.store')->middleware('auth');
 
+Route::post('areas', 'AreaController@store')->name('areas.store')->middleware('auth');
+
+Route::post('giros', 'GiroController@store')->name('giros.store')->middleware('auth');
+
+Route::post('clientes', 'User\ClienteController@store')->name('user.clientes.store')->middleware('auth');
+
+Route::post('zonas-de-trabajo', 'ZonaTrabajoController@store')->name('zonas-trabajo.store')->middleware('auth');
 
 Route::get('trueques/publicar', 'TruequeController@create')->middleware('auth');
+
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

@@ -198,20 +198,22 @@
         <div class="modal-content">
             <div class="modal-header">
                 <!-- CABECERA -->
-                <h4 class="text-center modal-title">Areas</h4>
+                <h4 class="text-center modal-title">Áreas</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
             </div>
-            <div class="modal-body">
-                <!-- CUERPO DEL MENSAJE -->
-                <textarea name="textarea" rows="10" cols="50"
-                    class="form-control">Escribe las áreas que abarcan tus servicios</textarea>
-            </div>
-            <div class="modal-footer">
-                <!-- PIE -->
-                <button class="btn btn-default btn btn-primary btn-lg" type="button"
-                    data-dismiss="modal">Guardar</button>
-            </div>
+            <form action="{{route('areas.store')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <!-- CUERPO DEL MENSAJE -->
+                    <textarea name="descripcion" rows="10" cols="50"
+                        class="form-control" placeholder="Escribe las áreas que abarcan tus servicios">{{ $user->area ? $user->area->descripcion : '' }}</textarea>
+                </div>
+                <div class="modal-footer">
+                    <!-- PIE -->
+                    <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -337,16 +339,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
             </div>
-            <div class="modal-body">
-                <!-- CUERPO DEL MENSAJE -->
-                <input type="text" name="jobs-application-phone" id="jobs-application-phone"
-                    class="form-control required" value="" placeholder="Introduzca el giro del negocio">
-            </div>
-            <div class="modal-footer">
-                <!-- PIE -->
-                <button class="btn btn-default btn btn-primary btn-lg" type="button"
-                    data-dismiss="modal">Guardar</button>
-            </div>
+            <form action="{{route('giros.store')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <!-- CUERPO DEL MENSAJE -->
+                    <input type="text" name="nombre" id="jobs-application-phone"
+                        class="form-control required" value="{{$user->giro ? $user->giro->nombre : ''}}" placeholder="Introduzca el giro del negocio">
+                </div>
+                <div class="modal-footer">
+                    <!-- PIE -->
+                    <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -361,16 +365,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
             </div>
-            <div class="modal-body">
-                <!-- CUERPO DEL MENSAJE -->
-                <textarea name="textarea" rows="10" cols="50"
-                    class="form-control">Escribe una lista de tus principales clientes</textarea>
-            </div>
-            <div class="modal-footer">
-                <!-- PIE -->
-                <button class="btn btn-default btn btn-primary btn-lg" type="button"
-                    data-dismiss="modal">Guardar</button>
-            </div>
+            <form action="{{route('user.clientes.store')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <!-- CUERPO DEL MENSAJE -->
+                    <textarea name="descripcion" rows="10" cols="50"
+                        class="form-control" placeholder="Escribe una lista de tus principales clientes">{{$user->clientes ? $user->clientes->descripcion : ''}}</textarea>
+                </div>
+                <div class="modal-footer">
+                    <!-- PIE -->
+                    <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -385,16 +391,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
             </div>
-            <div class="modal-body">
-                <!-- CUERPO DEL MENSAJE -->
-                <textarea name="textarea" rows="10" cols="50"
-                    class="form-control">Ingresa las zonas en las que brindas tus servicios</textarea>
-            </div>
-            <div class="modal-footer">
-                <!-- PIE -->
-                <button class="btn btn-default btn btn-primary btn-lg" type="button"
-                    data-dismiss="modal">Guardar</button>
-            </div>
+            <form action="{{route('zonas-trabajo.store')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <!-- CUERPO DEL MENSAJE -->
+                    <textarea name="descripcion" rows="10" cols="50"
+                        class="form-control" placeholder="Ingresa las zonas en las que brindas tus servicios">{{$user->zonasTrabajo ? $user->zonasTrabajo->descripcion : ''}}</textarea>
+                </div>
+                <div class="modal-footer">
+                    <!-- PIE -->
+                    <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

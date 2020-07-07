@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class Cliente extends Model
 {
-    protected $table = "areas";
+    protected $table = "clientes";
+
     protected $fillable = [
         "descripcion",
-        "user_id",
+        "user_id"
     ];
 }

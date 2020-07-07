@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class Giro extends Model
 {
-    protected $table = "areas";
+    protected $table = "giros";
     protected $fillable = [
-        "descripcion",
+        "nombre",
         "user_id",
     ];
 }
