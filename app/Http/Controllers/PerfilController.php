@@ -33,6 +33,7 @@ class PerfilController extends Controller
         $user->celular = $request->celular;
         $user->rfc = $request->rfc;
         $user->codigo_postal = $request->ubicacion;
+        $user->razon_social = $request->razon_social;
 
         if($request->nombre_empresa){
             $empresa = $user->empresa()->first() ?: new Empresa;

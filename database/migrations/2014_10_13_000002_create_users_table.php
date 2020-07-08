@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('telefono', 13)->nullable();
             $table->string('celular', 13)->nullable();
             $table->string('whatsapp', 13)->nullable();
+            $table->string('razon_social', 50)->nullable();
             $table->string('foto',50)->nullable();
             $table->string('password');
             $table->rememberToken();

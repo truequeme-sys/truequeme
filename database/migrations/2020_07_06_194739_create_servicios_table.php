@@ -20,7 +20,7 @@ class CreateServiciosTable extends Migration
             $table->decimal('costo');
             $table->string('lugar_entrega', 100);
             $table->string('categoria', 100);
-            $table->boolean('tiene_garantia');
+            $table->boolean('tiene_garantia')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
