@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('foto',50)->nullable();
             $table->string('password');
             $table->rememberToken();
+            
             $table->unsignedBigInteger('empresa_id')->nullable();
             $table->timestamps();
 
