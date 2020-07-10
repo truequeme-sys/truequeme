@@ -94,7 +94,7 @@
 								<li><a href="{{ route('perfil.edit') }}"><div>Perfil</div></a></li>
 								<li><a href="#"><div>Publicar Trueque</div></a></li>
 								<li><a href="#"><div>Buscar Empresa</div></a></li>
-								<li><a href="#"><div>Buscar Trueque</div></a></li>	
+								<li><a href="{{ route('trueques.index') }}"><div>Buscar Trueque</div></a></li>	
 								<li><a href="#"><div>Invitar</div></a></li>	
 								@endauth
 							</ul>

@@ -6,7 +6,14 @@ use Illuminate\Http\Request;
 
 class TruequeController extends Controller
 {
-    public function create(){
+
+    public function index()
+    {
+        return view('trueques.index');
+    }
+
+    public function create()
+    {
         return 'ok';
     }
 }

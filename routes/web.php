@@ -40,5 +40,6 @@ Route::post('clientes', 'User\ClienteController@store')->name('user.clientes.sto
 Route::post('zonas-de-trabajo', 'ZonaTrabajoController@store')->name('zonas-trabajo.store')->middleware('auth');
 
 Route::get('trueques/publicar', 'TruequeController@create')->middleware('auth');
+Route::get('trueques', 'TruequeController@index')->name('trueques.index')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
