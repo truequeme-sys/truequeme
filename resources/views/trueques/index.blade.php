@@ -126,20 +126,21 @@
 
 					<div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20" data-nav="true" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
 
+						@foreach ($artefactos as $artefacto)
 						<div class="oc-item">
 							<div class="iportfolio">
 								<div class="portfolio-image">
 									<a href="#">
-										<img src="{{asset('storage/trueques/3.jpg')}}" alt="Truequeme">
+										<img src="{{asset($artefacto->imagen)}}" alt="Truequeme">
 									</a>
 									<div class="portfolio-overlay">
-										<a href="images/big/4.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="{{asset($artefacto->imagen)}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
 										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
 									</div>
 								</div>
 								<div class="portfolio-desc">
-									<h3><a href="#">Título 1</a></h3>
-									<span><a href="#">Categoría 1</a><br><a href="#">Empresa 1</a></span><br>
+									<h3><a href="#">{{$artefacto->titulo}}</a></h3>
+									<span><a href="#">{{$artefacto->categoria->nombre}}</a><br><a href="#">{{$artefacto->empresa ? $artefacto->empresa->nombre : 'N/E'}}</a></span><br>
 								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user">
 									<i class="icon-line2-user"></i>
 									<i class="icon-line2-user"></i>
@@ -155,352 +156,60 @@
 								</div>
 							</div>
 						</div>
+						@endforeach
 
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{asset('storage/trueques/3.jpg')}}" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/2.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Título 2</a></h3>
-									<span><a href="#">Categoría 2</a><br><a href="#">Empresa 2</a></span><br>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user">
-									<i class="icon-line2-user"></i>
-									<i class="icon-line2-user"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list">
-									<i class="icon-line2-list"></i>
-									<i class="icon-line2-list"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-speech">
-									<i class="icon-line2-speech"></i>
-									<i class="icon-line2-speech"></i>
-								</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{asset('storage/trueques/3.jpg')}}" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/3.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Título 3</a></h3>
-									<span><a href="#">Categoría 3</a><br><a href="#">Empresa 3</a></span><br>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user">
-									<i class="icon-line2-user"></i>
-									<i class="icon-line2-user"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list">
-									<i class="icon-line2-list"></i>
-									<i class="icon-line2-list"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-speech">
-									<i class="icon-line2-speech"></i>
-									<i class="icon-line2-speech"></i>
-								</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="{{asset('storage/trueques/3.jpg')}}" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Título 3</a></h3>
-									<span><a href="#">Categoría 3</a><br><a href="#">Empresa 4</a></span><br>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user">
-									<i class="icon-line2-user"></i>
-									<i class="icon-line2-user"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list">
-									<i class="icon-line2-list"></i>
-									<i class="icon-line2-list"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-speech">
-									<i class="icon-line2-speech"></i>
-									<i class="icon-line2-speech"></i>
-								</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/4.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/4.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Título 5</a></h3>
-									<span><a href="#">Categoría 5</a><br><a href="#">Empresa 5</a></span><br>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user">
-									<i class="icon-line2-user"></i>
-									<i class="icon-line2-user"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list">
-									<i class="icon-line2-list"></i>
-									<i class="icon-line2-list"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-speech">
-									<i class="icon-line2-speech"></i>
-									<i class="icon-line2-speech"></i>
-								</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/2.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/2.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Título 6</a></h3>
-									<span><a href="#">Categoría 6</a><br><a href="#">Empresa 6</a></span><br>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user">
-									<i class="icon-line2-user"></i>
-									<i class="icon-line2-user"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list">
-									<i class="icon-line2-list"></i>
-									<i class="icon-line2-list"></i>
-								</a>
-								<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-speech">
-									<i class="icon-line2-speech"></i>
-									<i class="icon-line2-speech"></i>
-								</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/3.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/3.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Título 7</a></h3>
-									<span><a href="#">Categoría 7</a><br><a href="#">Empresa 7</a></span><br>
-									<a href="#" data-toggle="modal" data-target="#modal-especialista" class="button" style="width: 130px;">Perfil</a>
-									<a href="#" data-toggle="modal" data-target="#modal-certificaciones" class="button" style="width: 130px;">Detalle</a>
-									<a href="#" data-toggle="modal" data-target="#modal-servicios" class="button" style="width: 130px;">Contacto</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/1.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Título 8</a></h3>
-									<span><a href="#">Categoría 8</a><br><a href="#">Empresa 8</a></span><br>
-									<a href="#" data-toggle="modal" data-target="#modal-especialista" class="button" style="width: 130px;">Perfil</a>
-									<a href="#" data-toggle="modal" data-target="#modal-certificaciones" class="button" style="width: 130px;">Detalle</a>
-									<a href="#" data-toggle="modal" data-target="#modal-servicios" class="button" style="width: 130px;">Contacto</a>
-								</div>
-							</div>
-						</div>
 
 					</div>
 
 					<div class="clear"></div>
 
 					<div class="fancy-title title-center title-dotted-border topmargin">
-						<h3>Empresas</h3>
+						<h3>Empresas / Usuarios</h3>
 					</div>
 
 					<div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20" data-nav="true" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
 
+						@foreach ($users as $user)
 						<div class="oc-item">
 							<div class="iportfolio">
 								<div class="portfolio-image">
 									<a href="#">
-										<img src="images/thumbs/4.jpg" alt="Truequeme">
+										<img src="{{$user->foto}}" alt="Truequeme">
 									</a>
 									<div class="portfolio-overlay">
-										<a href="images/big/4.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="{{$user->foto}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
 										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
 									</div>
 								</div>
 								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 1 </a></h3>
+									<h3><a href="#">{{$user->name}}</a></h3>
 									<span><a href="#">Truequeme 1</a>, <a href="#">Iconos</a></span>
 								</div>
 							</div>
 						</div>
 
+						@foreach ($user->empresas as $empresa)
 						<div class="oc-item">
 							<div class="iportfolio">
 								<div class="portfolio-image">
 									<a href="#">
-										<img src="images/thumbs/2.jpg" alt="Truequeme">
+										<img src="{{$empresa->foto}}" alt="Truequeme">
 									</a>
 									<div class="portfolio-overlay">
-										<a href="images/big/2.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="{{$empresa->foto}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
 										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
 									</div>
 								</div>
 								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 2</a></h3>
-									<span><a href="#">Truequeme 2</a></span>
+									<h3><a href="#">{{$empresa->nombre}}</a></h3>
+									<span><a href="#">Truequeme 1</a>, <a href="#">Iconos</a></span>
 								</div>
 							</div>
 						</div>
+						@endforeach
 
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/3.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/3.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 3</a></h3>
-									<span><a href="#">Truequeme 3</a>, <a href="#">Iconos</a></span>
-								</div>
-							</div>
-						</div>
+						@endforeach
 
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/1.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 4</a></h3>
-									<span><a href="#">Truequeme 4</a>, <a href="#">Iconos</a></span>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/4.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/4.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 5 </a></h3>
-									<span><a href="#">Truequeme 5</a>, <a href="#">Iconos</a></span>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/2.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/2.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 6</a></h3>
-									<span><a href="#">Truequeme 6</a></span>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/3.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/3.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 7</a></h3>
-									<span><a href="#">Truequeme 7</a>, <a href="#">Iconos</a></span>
-								</div>
-							</div>
-						</div>
-
-						<div class="oc-item">
-							<div class="iportfolio">
-								<div class="portfolio-image">
-									<a href="#">
-										<img src="images/thumbs/1.jpg" alt="Truequeme">
-									</a>
-									<div class="portfolio-overlay">
-										<a href="images/big/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-										<a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
-									</div>
-								</div>
-								<div class="portfolio-desc">
-									<h3><a href="#">Truequeme 8</a></h3>
-									<span><a href="#">Truequeme 8</a>, <a href="#">Iconos</a></span>
-								</div>
-							</div>
-						</div>
 
 					</div>
 

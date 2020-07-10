@@ -29,10 +29,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             
-            $table->unsignedBigInteger('empresa_id')->nullable();
+            // $table->unsignedBigInteger('empresa_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('set null');
+            // $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('set null');
         });
     }
 

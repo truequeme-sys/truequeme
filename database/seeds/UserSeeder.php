@@ -20,8 +20,13 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('12345678'),
                 'rfc' => 'rfc123',
                 'apellido_paterno' => 'Paniagua',
-                'apellido_materno' => 'Sabines'
+                'apellido_materno' => 'Sabines',
             ]
+        ]);
+
+        DB::table('empresa_user')->insert([
+            'empresa_id' => 1,
+            'user_id' => 1
         ]);
     }
 }

@@ -51,9 +51,9 @@ class User extends Authenticatable
     // RELATIONSHIPS
     // =============
 
-    public function empresa()
+    public function empresas()
     {
-        return $this->belongsTo('App\Empresa');
+        return $this->belongsToMany('App\Empresa');
     }
 
     public function especialidad()
