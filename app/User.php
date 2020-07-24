@@ -90,4 +90,13 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\ZonaTrabajo');
     }
+
+    // 
+    // 
+    // 
+
+    public function getNombreCompletoAttribute(){
+        return $this->name . " " . $this->apellido_paterno . " " . $this->apellido_materno;
+    }
+
 }

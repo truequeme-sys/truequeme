@@ -15,9 +15,14 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 50);
-            // $table->bigInteger('giro_id')->unsigned()->nullable();
-            $table->string('codigo_postal', 5)->nullable();
+            $table->string('razon_social', 50);
+            $table->string('rfc', 50);
+            $table->string('direccion', 50);
+            $table->string('colonia', 50);
+            $table->string('ciudad', 50);
+            $table->string('estado', 50);
+            $table->string('pais', 50);
+            $table->string('foto');
             $table->timestamps();
 
             // $table->foreign('giro_id')->references('id')->on('giros')->onDelete('set null');

@@ -71,19 +71,6 @@
                                         placeholder="Teléfono celular">
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <label>Nombre de la empresa:</label>
-                                    <input type="text" name="nombre_empresa" id="jobs-application-phone"
-                                        class="form-control required"
-                                        value="{{ $user->empresa()->first() ? $user->empresa()->first()->nombre : '' }}"
-                                        placeholder="Nombre de la empresa" maxlength="50">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label>Razón Social:</label>
-                                    <input type="text" name="razon_social" id="jobs-application-phone"
-                                        class="form-control required" value="{{$user->razon_social}}"
-                                        placeholder="Razón Social">
-                                </div>
-                                <div class="col-md-6 form-group">
                                     <label>RFC:</label>
                                     <input type="text" name="rfc" id="jobs-application-location" class="form-control"
                                         value="{{ $user->rfc }}" placeholder="RFC" maxlength="13"
@@ -95,7 +82,11 @@
                                         class="form-control" value="{{ $user->codigo_postal }}" placeholder="C.P."
                                         minlength="5" maxlength="5">
                                 </div>
-                                <div class="col-md-6" style="text-align: right; padding-top: 35px;">
+                                <div class="col-md-3" style="text-align: left; padding-top: 25px;">
+                                    <a href="#" data-toggle="modal" data-target="#modal-empresas" class="button"
+                                        style="width: 140px; background-color: #05cc7c;">+ Empresas</a>
+                                </div>
+                                <div class="col-md-3" style="text-align: right; padding-top: 35px;">
                                     <button type="submit" name="jobs-application-submit"
                                         class="btn btn-secondary">Guardar Perfil</button>
                                 </div>
@@ -285,6 +276,194 @@
 </div>
 
 
+{{--  --}}
+
+<div role="dialog" tabindex="-1" class="modal fade" id="modal-empresas"
+    style="max-width:600px;margin-right:auto;margin-left:auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- CABECERA -->
+                <h4 class="text-center modal-title">Empresas</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <!-- CUERPO DEL MENSAJE -->
+
+                @foreach ($user->empresas as $empresa)
+                <div class="col-md-12 form-group">
+                    <p><b>{{$empresa->razon_social}}</b></p>
+
+                    {{-- <a href="#" data-toggle="modal" data-target="#modal-empresas-editar" class="button"
+                        style="width: 140px;">
+                        <i class="icon-line2-pencil"></i>
+                        <i class="icon-line2-pencil"></i>
+                    </a> --}}
+
+                    <a href="#" data-toggle="modal" data-target="#modal-empresas-editar-{{$empresa->id}}"
+                        class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list botonEditarEmpresa"
+                        empresa-id="{{$empresa->id}}" empresa-razon-social="{{$empresa->razon_social}}"
+                        empresa-rfc="{{$empresa->rfc}}" empresa-direccion="{{$empresa->direccion}}">
+                        <i class="icon-line2-pencil"></i>
+                        <i class="icon-line2-pencil"></i>
+                    </a>
+
+                    <div role="dialog" tabindex="-1" class="modal fade" id="modal-empresas-editar-{{$empresa->id}}"
+                        style="max-width:600px;margin-right:auto;margin-left:auto;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <!-- CABECERA -->
+                                    <h4 class="text-center modal-title">Editar empresa</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">×</span></button>
+                                </div>
+                                <form action="{{route('empresas.update', ['empresa' => $empresa])}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="modal-body">
+                                        <!-- CUERPO DEL MENSAJE -->
+                                        <div class="col-md-12 form-group">
+                                            <label>Razón social:</label>
+                                            <input type="text" name="razon_social_empresa" id="jobs-application-name"
+                                                class="form-control required inputRazonSocial" value="{{$empresa->razon_social}}"
+                                                placeholder="Nombre de la certificación">
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>RFC:</label>
+                                            <input type="text" name="rfc_empresa" id="jobs-application-name"
+                                                class="form-control required inputRFC" value="{{$empresa->rfc}}"
+                                                placeholder="Nombre de la entidad emisora">
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>Dirección:</label>
+                                            <input type="text" name="direccion_empresa" id="jobs-application-name"
+                                                class="form-control required" value="{{$empresa->direccion}}"
+                                                placeholder="Fecha de expedición">
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>Colonia:</label>
+                                            <input type="text" name="colonia_empresa" id="jobs-application-email"
+                                                class="form-control required" value="{{$empresa->colonia}}"
+                                                placeholder="Validez del certificado">
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>Ciudad:</label>
+                                            <input type="text" name="ciudad_empresa" id="jobs-application-phone"
+                                                class="form-control required" value="{{$empresa->ciudad}}"
+                                                placeholder="País donde se emitió">
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>Estado:</label>
+                                            <input type="text" name="estado_empresa" id="jobs-application-phone"
+                                                class="form-control required" value="{{$empresa->estado}}"
+                                                placeholder="País donde se emitió">
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>País:</label>
+                                            <input type="text" name="pais_empresa" id="jobs-application-phone"
+                                                class="form-control required" value="{{$empresa->pais}}"
+                                                placeholder="País donde se emitió">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <!-- PIE -->
+                                        <button class="btn btn-default btn btn-primary btn-lg"
+                                            type="submit">Guardar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="{{route('empresas.delete', ['empresa' => $empresa])}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-speech">
+                            <i class="icon-line2-trash"></i>
+                            <i class="icon-line2-trash"></i>
+                        </button>
+                    </form>
+
+
+                </div>
+
+                @endforeach
+
+            </div>
+            <div class="modal-footer">
+                <!-- PIE -->
+                <a href="#" data-toggle="modal" data-target="#modal-empresas-agregar" class="button"
+                    style="width: 140px;">+ Empresa</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div role="dialog" tabindex="-1" class="modal fade" id="modal-empresas-agregar"
+    style="max-width:600px;margin-right:auto;margin-left:auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- CABECERA -->
+                <h4 class="text-center modal-title">Agregar empresa</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <form action="{{route('empresas.store')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <!-- CUERPO DEL MENSAJE -->
+                    <div class="col-md-12 form-group">
+                        <label>Razón social:</label>
+                        <input type="text" name="razon_social_empresa" id="jobs-application-name"
+                            class="form-control required" value="" placeholder="Nombre de la certificación">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>RFC:</label>
+                        <input type="text" name="rfc_empresa" id="jobs-application-name" class="form-control required"
+                            value="" placeholder="Nombre de la entidad emisora">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccion_empresa" id="jobs-application-name"
+                            class="form-control required" value="" placeholder="Fecha de expedición">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Colonia:</label>
+                        <input type="text" name="colonia_empresa" id="jobs-application-email"
+                            class="form-control required" value="" placeholder="Validez del certificado">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Ciudad:</label>
+                        <input type="text" name="ciudad_empresa" id="jobs-application-phone"
+                            class="form-control required" value="" placeholder="País donde se emitió">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Estado:</label>
+                        <input type="text" name="estado_empresa" id="jobs-application-phone"
+                            class="form-control required" value="" placeholder="País donde se emitió">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>País:</label>
+                        <input type="text" name="pais_empresa" id="jobs-application-phone" class="form-control required"
+                            value="" placeholder="País donde se emitió">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- PIE -->
+                    <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{--  --}}
+
 <div role="dialog" tabindex="-1" class="modal fade" id="modal-servicios"
     style="max-width:600px;margin-right:auto;margin-left:auto;">
     <div class="modal-dialog" role="document">
@@ -437,5 +616,30 @@
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+
+<script>
+    $(document).on('click', '.botonEditarEmpresa', function(){
+
+        const razon_social = $(this).attr('empresa-razon-social')
+        const rfc = $(this).attr('empresa-rfc')
+        const direccion = $(this).attr('empresa-direccion')
+        const colonia = $(this).attr('empresa-colonia')
+
+        console.table({
+            razon_social,
+            rfc,
+            direccion,
+            colonia
+        })
+
+        $('.inputRazonSocial').val(razon_social)
+        $('.inputRFC').val(rfc)
+
+    });
+
+</script>
 
 @endsection

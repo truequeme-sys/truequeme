@@ -33,6 +33,10 @@ Route::post('servicios', 'ServicioController@store')->name('servicios.store')->m
 
 Route::post('areas', 'AreaController@store')->name('areas.store')->middleware('auth');
 
+Route::post('empresas', 'EmpresaController@store')->name('empresas.store')->middleware('auth');
+Route::delete('empresas/{empresa}', 'EmpresaController@destroy')->name('empresas.delete')->middleware('auth');
+Route::put('empresas/{empresa}', 'EmpresaController@update')->name('empresas.update')->middleware('auth');
+
 Route::post('giros', 'GiroController@store')->name('giros.store')->middleware('auth');
 
 Route::post('clientes', 'User\ClienteController@store')->name('user.clientes.store')->middleware('auth');

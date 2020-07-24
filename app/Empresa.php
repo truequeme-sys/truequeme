@@ -8,9 +8,12 @@ class Empresa extends Model
 {
     protected $table = "empresas";
     protected $fillable = [
-        "nombre",
-        "giro_id",
-        "codigo_postal",
-        "user_id"
+        'razon_social',
+        'rfc',
+        'direccion',
+        'colonia',
+        'ciudad',
+        'estado',
+        'pais',
     ];
 }

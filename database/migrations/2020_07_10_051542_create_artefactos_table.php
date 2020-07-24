@@ -17,7 +17,9 @@ class CreateArtefactosTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->enum('tipo', ['servicio', 'producto']);
+            $table->enum('necesita_u_ofrece', ['necesita', 'ofrece']);
             $table->string('imagen')->nullable();
+            $table->string('giro')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('empresa_id')->nullable();
             $table->unsignedBigInteger('categoria_id');

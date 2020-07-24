@@ -14,8 +14,14 @@ class EmpresaSeeder extends Seeder
     {
         DB::table('empresas')->insert([
             [
-                'nombre' => 'B&W',
-                'codigo_postal' => '07790'
+                'razon_social' => 'B&W',
+                'rfc' => 'b&w_rfc',
+                'direccion' => 'Matagalpa #43',
+                'colonia' => 'Linda Vista',
+                'ciudad' => 'CDMX',
+                'estado' => 'CDMX',
+                'pais' => 'México',
+                'foto' => 'storage/fotos/1.png'
             ]
         ]);
     }

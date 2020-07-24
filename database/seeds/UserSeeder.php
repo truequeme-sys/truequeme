@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -21,8 +22,24 @@ class UserSeeder extends Seeder
                 'rfc' => 'rfc123',
                 'apellido_paterno' => 'Paniagua',
                 'apellido_materno' => 'Sabines',
+                'foto' => 'storage/fotos/1.png'
             ]
         ]);
+
+        $faker = Factory::create();
+
+        for($i=0; $i<=50; $i++):
+            DB::table('users')
+                ->insert([
+                    'email' => $faker->email,
+                    'name' => $faker->firstname,
+                    'password' => $faker->password,
+                    'rfc' => $faker->text(13),
+                    'apellido_paterno' => $faker->lastname,
+                    'apellido_materno' => $faker->lastname,
+                    'foto' => 'storage/fotos/1.png'
+                ]);
+        endfor;
 
         DB::table('empresa_user')->insert([
             'empresa_id' => 1,
