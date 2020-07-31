@@ -55,7 +55,7 @@ class TruequeController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $user= Auth::user();
         $artefacto= new Artefacto(
