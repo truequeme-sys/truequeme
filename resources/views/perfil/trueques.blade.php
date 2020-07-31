@@ -45,11 +45,11 @@
 									            <td>{{$artefacto->necesita_u_ofrece=="ofrece" ? "Ofrezco" : "Necesito"}}</td>
 									            <td>Viernes, 27 de Octubre de 2020</td>
 									            <td>								
-									            	<a href="#" data-toggle="modal" data-target="#modal-trueque-edit" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user button_editar" value="{{$artefacto->id}}">
+									            	<a href="#" data-toggle="modal" data-target="#modal-trueque-edit" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user button_editar" data-value="{{$artefacto->id}}">
 														<i class="icon-line2-pencil"></i>
 														<i class="icon-line2-pencil"></i>
 													</a>
-													<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list button_eliminar" value="{{$artefacto->id}}">
+													<a href="#" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-list button_eliminar" data-value="{{$artefacto->id}}">
 														<i class="icon-line2-trash"></i>
 														<i class="icon-line2-trash"></i>
 													</a>
@@ -229,11 +229,11 @@
 <script>
 	jQuery(document).ready( function(){
 		$(".button_editar").click(function() {
-			console.log( $(this).val());
+			console.log( $(this).data('value'));
 			$.ajax({
 				url: "{{route('getArtefacto')}}",
 				data : { "_token": "{{CSRF_TOKEN()}}"
-						,"id" : $(this).val() },
+						,"id" : $(this).data('value') },
 				type : 'POST',
 				dataType : 'json',
 				success: function(respuesta) {
