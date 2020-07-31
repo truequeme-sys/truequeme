@@ -127,7 +127,7 @@
 		       		<div class="col-md-12 form-group">
 	                        <label>Subir imagen:</label>
 	                        <input type="file" id="jobs-application-resume" name="foto_nuevo"
-	                            class="file-loading required" data-show-preview="false" />
+	                            class="file-loading " data-show-preview="false" />
 	                    </div>
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo</label>
@@ -169,7 +169,7 @@
 			       	</div>	       	
 		       </div>
 		       <div class="modal-footer"> <!-- PIE -->
-		       <button class="btn btn-default btn btn-primary btn-lg" type="button" data-dismiss="modal">Guardar</button>
+		       <button class="btn btn-default btn btn-primary btn-lg" type="submit" >Guardar</button>
 		       </div>
 		    </form>
 	     </div>
@@ -192,7 +192,7 @@
 		       		<div class="col-md-12 form-group">
                         <label>Subir imagen:</label>
                         <input type="file" id="jobs-application-resume" name="foto_edit"
-                            class="file-loading required" data-show-preview="false" />
+                            class="file-loading " data-show-preview="false" />
                     </div>
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo</label>
