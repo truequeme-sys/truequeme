@@ -15,6 +15,8 @@ class AddComentarioToArtefactosTable extends Migration
     {
         Schema::table('artefactos', function (Blueprint $table) {
             //
+            $table->time('validez');
+            $table->string('comentario');
         });
     }
 
