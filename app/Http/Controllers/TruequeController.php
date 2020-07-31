@@ -65,7 +65,7 @@ class TruequeController extends Controller
                   'validez'=>$request->fecha_nuevo,
                   'categoria_id'=>$request->Categoria_nuevo,
                   'comentario'=>$request->Comentario_nuevo,
-                  'tipo'=>$request->Tipo_nuevo);
+                  'tipo'=>$request->Tipo_nuevo)
         );
         if ($request->Ofrezco_editar==1) {
             $artefacto->necesita_u_ofrece="ofrece";
