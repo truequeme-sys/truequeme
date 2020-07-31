@@ -117,7 +117,7 @@ class TruequeController extends Controller
         $artefacto->save();
         return redirect()->route('MisTrueques');
     }
-    public function EliminarArtefacto(Request $request)
+    public function eliminarArtefacto(Request $request)
     {
         $artefacto=Artefacto::where("id",$request->input("id"))->first();
         $artefacto->delete();
