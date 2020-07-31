@@ -184,28 +184,20 @@
 		       	</div>	       	
 		       	<div class="col-md-12 form-group">
 		       		<label>Título:</label>
-		       		<input type="text" name="jobs-application-name" id="jobs-application-name" class="form-control required" value="" placeholder="Nombre del servicio o producto">
+		       		<input type="text" name="titulo_editar" id="titulo_editar" class="form-control required" value="" placeholder="Nombre del servicio o producto">
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Validez:</label>
-		       		<input type="text" name="jobs-application-name" id="jobs-application-name" class="form-control required" value="" placeholder="Fecha">
+		       		<input type="text" name="fecha_edit" id="fecha_edit" class="form-control required" value="" placeholder="Fecha">
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Categoría:</label>
-		       		<select class="select-1 form-control" style="width:100%;">
-									<optgroup label="Categoría 1">
-										<option value="">Categoría 1 - 1</option>
-										<option value="">Categoría 1 - 2</option>
-									</optgroup>
-									<optgroup label="Categoría 2">
-										<option value="">Categoría 2 - 1</option>
-										<option value="">Categoría 2 - 2</option>
-									</optgroup>
-									<optgroup label="Categoría 3">
-										<option value="">Categoría 3 - 1</option>
-										<option value="">Categoría 3 - 2</option>
-									</optgroup>
-								</select>
+		       		<select class="select-1 form-control" style="width:100%;" id="Categoria_editar" name="Categoria_editar">
+		       			<option value=""></option>
+		       			@foreach ($categorias as $categoria)
+		       				<option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+						@endforeach
+					</select>
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Comentarios:</label>
@@ -229,7 +221,6 @@
 <script>
 	jQuery(document).ready( function(){
 		$(".button_editar").click(function() {
-			console.log( $(this).data('value'));
 			$.ajax({
 				url: "{{route('getArtefacto')}}",
 				data : { "_token": "{{CSRF_TOKEN()}}"
@@ -237,7 +228,6 @@
 				type : 'POST',
 				dataType : 'json',
 				success: function(respuesta) {
-					console.log(respuesta.necesita_u_ofrece);
 					if(respuesta.necesita_u_ofrece=="ofrece"){
 						$("#Ofrezco_editar_label").addClass("active");
 						$("#Necesito_editar_label").removeClass("active");
@@ -245,6 +235,9 @@
 						$("#Necesito_editar_label").addClass("active");
 						$("#Ofrezco_editar_label").removeClass("active");
 					}
+					$("#titulo_editar").val(respuesta.titulo);
+					$("#Categoria_editar option[value='"+respuesta.categoria_id+"']").attr("selected",true);
+
 
 				}
 			});

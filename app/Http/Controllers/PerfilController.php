@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Empresa;
 use App\User;
 use App\Artefacto;
+use App\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -64,7 +65,8 @@ class PerfilController extends Controller
         $user= Auth::user();
         $artefactos = Artefacto::orderBy('created_at', 'desc');
         $artefactos=$artefactos->where('user_id',$user->id )->get();
-       return view('perfil.trueques', compact('artefactos'));
+        $categorias=Categoria::get();
+       return view('perfil.trueques', compact('artefactos','categorias'));
         # code...
     }
 }
