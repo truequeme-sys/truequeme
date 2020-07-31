@@ -232,7 +232,7 @@
 			$.ajax({
 				url: "{{route('getArtefacto')}}",
 				data : { "_token": "{{CSRF_TOKEN()}}"
-						,id : $(".button_editar").val() },
+						,"id" : $(".button_editar").val() },
 				type : 'POST',
 				dataType : 'json',
 				success: function(respuesta) {
