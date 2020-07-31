@@ -124,11 +124,7 @@
 							@endforeach
 						</select>
 			       	</div>
-		       		<div class="col-md-12 form-group">
-	                        <label>Subir imagen:</label>
-	                        <input type="file" id="jobs-application-resume" name="foto_nuevo"
-	                            class="file-loading " data-show-preview="false" />
-	                    </div>
+		       		
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo</label>
 			       		<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
@@ -139,7 +135,12 @@
 			       				<input type="radio" name="Necesito_nuevo" id="Necesito_nuevo" autocomplete="off" value="0"> Necesito
 			       			</label>
 			       		</div>
-			       	</div>	       	
+			       	</div>
+			       	<div class="col-md-12 form-group">
+	                        <label>Subir imagen:</label>
+	                        <input type="file" id="jobs-application-resume" name="foto_nuevo"
+	                            class="file-loading " data-show-preview="false" />
+	                    </div>	       	
 			       	<div class="col-md-12 form-group">
 			       		<label>Título:</label>
 			       		<input type="text" name="titulo_nuevo" id="jobs-application-name" class="form-control required" value="" placeholder="Nombre del servicio o producto">
@@ -189,11 +190,7 @@
 	       	<input type="hidden" name="id_edit" id="id_edit" >
 	       		<div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
 	                
-		       		<div class="col-md-12 form-group">
-                        <label>Subir imagen:</label>
-                        <input type="file" id="jobs-application-resume" name="foto_edit"
-                            class="file-loading " data-show-preview="false" />
-                    </div>
+		       		
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo</label>
 			       		<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
@@ -204,7 +201,12 @@
 			       				<input type="radio" name="Necesito_editar" id="Necesito_editar" autocomplete="off" value="0"> Necesito
 			       			</label>
 			       		</div>
-			       	</div>	       	
+			       	</div>
+			       	<div class="col-md-12 form-group">
+                        <label>Subir imagen:</label>
+                        <input type="file" id="jobs-application-resume" name="foto_edit"
+                            class="file-loading " data-show-preview="false" />
+                    </div>	       	
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo:</label>
 			       		<select class="select-1 form-control" style="width:100%;" id="Tipo_editar" name="Tipo_editar">

@@ -76,11 +76,11 @@ class TruequeController extends Controller
         }
 
         if( $request->file('foto_nuevo') ){
-            $foto = $request->user()->id . "." . $request->foto->getClientOriginalExtension();
+            $foto = $request->user()->id . "." . $request->foto_nuevo->getClientOriginalExtension();
             $request->file('foto_nuevo')->storeAs(
                 'public/fotos', $foto
             );
-            $artefacto->foto = $foto_nuevo;
+            $artefacto->imagen = $foto_nuevo;
         }
         $artefacto->save();
         return redirect()->route('MisTrueques');
@@ -91,7 +91,7 @@ class TruequeController extends Controller
         //dd($artefacto);
 
         if( $request->file('foto_edit') ){
-            $foto = $request->user()->id . "." . $request->foto->getClientOriginalExtension();
+            $foto = $request->user()->id . "." . $request->foto_edit->getClientOriginalExtension();
             $request->file('foto_edit')->storeAs(
                 'public/fotos', $foto
             );
