@@ -300,7 +300,10 @@
 				data : { "_token": "{{CSRF_TOKEN()}}"
 						,"id" : $(this).data('value') },
 				type : 'POST',
-				dataType : 'json'
+				dataType : 'json',
+				success: function (respuesta) {
+					$(location).attr('href',"{{route('MisTrueques')}}");
+				}
 			});
 		});
 		

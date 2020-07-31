@@ -113,7 +113,7 @@ class TruequeController extends Controller
     {
         $artefacto=Artefacto::where("id",$request->input("id"))->first();
         $artefacto->delete();
-        return redirect()->route('MisTrueques');
+        return response()->json(1);
     }
     public function getArtefacto(Request $request)
     {
