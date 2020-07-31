@@ -154,7 +154,7 @@
 			       	</div>
 			       	<div class="col-md-12 form-group">
 			       		<label>Validez:</label>
-			       		<input type="text" name="fecha_nuevo" id="jobs-application-name" class="form-control required" value="" placeholder="Fecha">
+			       		<input type="date" name="fecha_nuevo" id="jobs-application-name" class="form-control required" value="" placeholder="Fecha">
 			       	</div>
 			       	<div class="col-md-12 form-group">
 			       		<label>Categoría:</label>
