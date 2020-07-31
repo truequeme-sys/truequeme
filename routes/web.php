@@ -24,6 +24,7 @@ Route::get('about', 'AboutController@index');
 Route::get('/perfil', 'PerfilController@index')->middleware('auth');
 Route::post('/perfil', 'PerfilController@store')->name('perfil.store')->middleware('auth');
 Route::get('/perfil/editar', 'PerfilController@edit')->name('perfil.edit')->middleware('auth');
+Route::get('/MisTrueques', 'PerfilController@trueques')->name('MisTrueques')->middleware('auth');
 
 Route::post('especialidades', 'EspecialidadController@store')->name('especialidades.store')->middleware('auth');
 

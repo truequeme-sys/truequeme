@@ -22,7 +22,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<link rel="stylesheet" href="{{asset('css/custom.css')}}" type="text/css" />
-
+ 
 	<!-- DatePicker CSS -->
 	<link rel="stylesheet" href="{{asset('css/components/datepicker.css')}}" type="text/css" />
 
@@ -92,7 +92,7 @@
 							<ul>
 								@auth
 								<li><a href="{{ route('perfil.edit') }}"><div>Perfil</div></a></li>
-								<li><a href="#"><div>Publicar Trueque</div></a></li>
+								<li><a href="{{route('MisTrueques')}}"><div>Publicar Trueque</div></a></li>
 								<li><a href="#"><div>Buscar Empresa</div></a></li>
 								<li><a href="{{ route('trueques.index') }}"><div>Buscar Trueque</div></a></li>	
 								<li><a href="#"><div>Invitar</div></a></li>	
