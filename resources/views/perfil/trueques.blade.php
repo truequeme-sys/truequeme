@@ -40,7 +40,7 @@
 								    <tbody>
 								    	@foreach ($artefactos as $artefacto)
 									        <tr>
-									            <td>{{$artefacto->titulo}}</td>
+									            <td>{{$artefacto->titulo}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 									            <td>{{$artefacto->categoria->nombre}}</td>
 									            <td>{{$artefacto->necesita_u_ofrece}}</td>
 									            <td>Viernes, 27 de Octubre de 2020</td>
