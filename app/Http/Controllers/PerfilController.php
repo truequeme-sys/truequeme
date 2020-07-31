@@ -61,7 +61,7 @@ class PerfilController extends Controller
     public function trueques()
     {
         $user= Auth::user();
-       return redirect()->route('perfil.trueques');
+       return view('perfil.trueques');
         # code...
     }
 }
