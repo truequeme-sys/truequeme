@@ -222,13 +222,13 @@
 					if(respuesta.necesita_u_ofrece=="ofrece"){
 						$("#Ofrezco_editar_label").addClass("active");
 						$("#Necesito_editar_label").removeClass("active");
-						$("#Ofrezco_editar_label").val(1);
-						$("#Necesito_editar_label").val(0);
+						$("#Ofrezco_editar").val(1);
+						$("#Necesito_editar").val(0);
 					}else{
 						$("#Necesito_editar_label").addClass("active");
 						$("#Ofrezco_editar_label").removeClass("active");
-						$("#Ofrezco_editar_label").val(0);
-						$("#Necesito_editar_label").val(1);
+						$("#Ofrezco_editar").val(0);
+						$("#Necesito_editar").val(1);
 					}
 					$("#titulo_editar").val(respuesta.titulo);
 					$("#Categoria_editar option[value='"+respuesta.categoria_id+"']").attr("selected",true);
