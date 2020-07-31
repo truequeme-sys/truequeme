@@ -212,7 +212,7 @@
 			       	</div>	
 		       </div>
 		       <div class="modal-footer"> <!-- PIE -->
-		       <button class="btn btn-default btn btn-primary btn-lg" type="submit" data-dismiss="modal">Guardar</button>
+		       <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
 		       </div>
 	       </form> 
 	     </div>
