@@ -161,9 +161,9 @@
 	       <h4 class="text-center modal-title">Editar trueque</h4>
 	       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 	       </div>
-	       <div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
-	       		<form class="row" action="{{route('trueque.edit')}}" method="post" enctype="multipart/form-data">
-	                @csrf
+	       <form class="row" action="{{route('trueque.edit')}}" method="post" enctype="multipart/form-data">
+	       	@csrf
+	       		<div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
 	                <input type="hidden" name="id_edit" id="id_edit" value="0">
 		       		<div class="col-md-12 form-group">
 	                    <label>Subir imagen:</label>
@@ -210,11 +210,11 @@
 			       		<label>Comentarios:</label>
 			       		<textarea name="Comentario_edit" id="Comentario_edit"  rows="10" cols="50" class="form-control">Comentarios que ayuden a des cribir con más detalle tu trueque</textarea>
 			       	</div>	
-			    </form>       	
-	       </div>
-	       <div class="modal-footer"> <!-- PIE -->
-	       <button class="btn btn-default btn btn-primary btn-lg" type="button" data-dismiss="modal">Guardar</button>
-	       </div>
+		       </div>
+		       <div class="modal-footer"> <!-- PIE -->
+		       <button class="btn btn-default btn btn-primary btn-lg" type="submit" data-dismiss="modal">Guardar</button>
+		       </div>
+	       </form> 
 	     </div>
 	   </div>
 	</div>
