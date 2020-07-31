@@ -80,7 +80,7 @@ class TruequeController extends Controller
             $request->file('foto_nuevo')->storeAs(
                 'public/fotos', $foto
             );
-            $artefacto->imagen = $foto_nuevo;
+            $artefacto->imagen = $foto;
         }
         $artefacto->save();
         return redirect()->route('MisTrueques');
@@ -95,7 +95,7 @@ class TruequeController extends Controller
             $request->file('foto_edit')->storeAs(
                 'public/fotos', $foto
             );
-            $artefacto->foto = $foto;
+            $artefacto->imagen = $foto;
         }
         if ($request->Ofrezco_editar==1) {
             $artefacto->necesita_u_ofrece="ofrece";
