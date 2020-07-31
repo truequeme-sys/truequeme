@@ -60,7 +60,6 @@ class TruequeController extends Controller
         $user= Auth::user();
         $artefacto= new Artefacto(
             array(
-                  'empresa_id'=>$request->empresa_nuevo,
                   'titulo' => $request->titulo_nuevo,
                   'validez'=>$request->fecha_nuevo,
                   'categoria_id'=>$request->Categoria_nuevo,
@@ -72,6 +71,9 @@ class TruequeController extends Controller
         }
         if ($request->Necesito_editar==1) {
             $artefacto->necesita_u_ofrece="necesita";
+        }
+        if ($request->empresa_nuevo) {
+            $artefacto->empresa_id=$request->empresa_nuevo;
         }
 
         if( $request->file('foto_nuevo') ){
