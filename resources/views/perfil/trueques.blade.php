@@ -237,6 +237,7 @@
 				type : 'POST',
 				dataType : 'json',
 				success: function(respuesta) {
+					console.log(respuesta.necesita_u_ofrece);
 					if(respuesta.necesita_u_ofrece=="ofrece"){
 						$("#Ofrezco_editar_label").addClass("active");
 						$("#Necesito_editar_label").removeClass("active");
