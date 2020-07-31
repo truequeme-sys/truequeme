@@ -179,8 +179,11 @@
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Validez:</label>
-		       		<input type="text" name="fecha_edit" id="fecha_edit" class="form-control required" value="" placeholder="Fecha">
+		       		<div class="col-12">
+						<input class="form-control" type="date" name="fecha_edit" id="fecha_edit" >
+					</div>
 		       	</div>
+
 		       	<div class="col-md-12 form-group">
 		       		<label>Categoría:</label>
 		       		<select class="select-1 form-control" style="width:100%;" id="Categoria_editar" name="Categoria_editar">
