@@ -237,6 +237,13 @@
 				type : 'POST',
 				dataType : 'json',
 				success: function(respuesta) {
+					if(respuesta.necesita_u_ofrece=="ofrece"){
+						$("#Ofrezco_editar_label").addClass("active");
+						$("#Necesito_editar_label").removeClass("active");
+					}else{
+						$("#Necesito_editar_label").addClass("active");
+						$("#Ofrezco_editar_label").removeClass("active");
+					}
 
 				}
 			});
