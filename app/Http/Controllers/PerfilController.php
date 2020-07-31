@@ -63,7 +63,7 @@ class PerfilController extends Controller
     {
         $user= Auth::user();
         $artefactos = Artefacto::orderBy('created_at', 'desc');
-        $artefactos->where('user_id',$user->id );
+        $artefactos=$artefactos->where('user_id',$user->id )->get();
         dd($artefactos );
        return view('perfil.trueques', compact('artefactos'));
         # code...
