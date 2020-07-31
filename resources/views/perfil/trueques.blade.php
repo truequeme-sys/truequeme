@@ -136,19 +136,10 @@
 		       	<div class="col-md-12 form-group">
 		       		<label>Categoría:</label>
 		       		<select class="select-1 form-control" style="width:100%;">
-									<optgroup label="Categoría 1">
-										<option value="">Categoría 1 - 1</option>
-										<option value="">Categoría 1 - 2</option>
-									</optgroup>
-									<optgroup label="Categoría 2">
-										<option value="">Categoría 2 - 1</option>
-										<option value="">Categoría 2 - 2</option>
-									</optgroup>
-									<optgroup label="Categoría 3">
-										<option value="">Categoría 3 - 1</option>
-										<option value="">Categoría 3 - 2</option>
-									</optgroup>
-								</select>
+						@foreach ($categorias as $categoria)
+		       				<option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+						@endforeach
+					</select>
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Comentarios:</label>
@@ -193,7 +184,6 @@
 		       	<div class="col-md-12 form-group">
 		       		<label>Categoría:</label>
 		       		<select class="select-1 form-control" style="width:100%;" id="Categoria_editar" name="Categoria_editar">
-		       			<option value=""></option>
 		       			@foreach ($categorias as $categoria)
 		       				<option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
 						@endforeach
