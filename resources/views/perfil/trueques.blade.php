@@ -163,12 +163,12 @@
 	       </div>
 	       <form class="row" action="{{route('trueque.edit')}}" method="post" enctype="multipart/form-data">
 	       	@csrf
+	       	<input type="hidden" name="id_edit" id="id_edit" >
 	       		<div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
-	                <input type="hidden" name="id_edit" id="id_edit" value="0">
+	                
 		       		<div class="col-md-12 form-group">
 	                    <label>Subir imagen:</label>
-	                    <input type="file" id="foto_edit" name="foto_edit"
-	                        class="file-loading required" data-show-preview="false" />
+	                    <input type="file" id="foto_edit" name="foto_edit"class="file-loading required" data-show-preview="false">
 	                </div>
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo</label>
