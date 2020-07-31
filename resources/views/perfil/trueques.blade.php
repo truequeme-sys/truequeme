@@ -203,6 +203,11 @@
 			       		</div>
 			       	</div>
 			       	<div class="col-md-12 form-group">
+	                        <label>Subir imagen:</label>
+	                        <input type="file" id="jobs-application-resume" name="foto_nuevo"
+	                            class="file-loading " data-show-preview="false" />
+	                    </div>
+			       	<div class="col-md-12 form-group">
                         <label>Subir imagen:</label>
                         <input type="file" id="jobs-application-resume" name="foto_edit"
                             class="file-loading " data-show-preview="false" />
