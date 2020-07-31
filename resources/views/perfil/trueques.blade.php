@@ -187,6 +187,7 @@
 	       </div>
 	       <form class="row" action="{{route('trueque.edit')}}" method="post" enctype="multipart/form-data">
 	       	@csrf
+	       	<input type="hidden" name="id_edit" id="id_edit" />
 	       		<div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
 	                
 		       		
@@ -200,17 +201,7 @@
 			       				<input type="radio" name="Necesito_editar" id="Necesito_editar" autocomplete="off" value="0"> Necesito
 			       			</label>
 			       		</div>
-			       	</div>
-			       	<div class="col-md-12 form-group">
-	                        <label>Subir imagen:</label>
-	                        <input type="file" id="jobs-application-resume" name="foto_nuevo"
-	                            class="file-loading " data-show-preview="false" />
-	                    </div>
-			       	<div class="col-md-12 form-group">
-                        <label>Subir imagen:</label>
-                        <input type="file" id="jobs-application-resume" name="foto_edit"
-                            class="file-loading " data-show-preview="false" />
-                    </div>	       	
+			       	</div>       	
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo:</label>
 			       		<select class="select-1 form-control" style="width:100%;" id="Tipo_editar" name="Tipo_editar">
