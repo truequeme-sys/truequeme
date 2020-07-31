@@ -60,7 +60,6 @@ class TruequeController extends Controller
         $user= Auth::user();
         $artefacto= new Artefacto(
             array(
-                  'user_id'=> $user->id ,
                   'empresa_id'=>$request->empresa_nuevo,
                   'titulo' => $request->titulo_nuevo,
                   'validez'=>$request->fecha_nuevo,
