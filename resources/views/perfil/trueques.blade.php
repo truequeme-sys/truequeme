@@ -229,18 +229,17 @@
 <script>
 	jQuery(document).ready( function(){
 		$(".button_editar").click(function() {
+			console.log( $(this).val());
 			$.ajax({
 				url: "{{route('getArtefacto')}}",
 				data : { "_token": "{{CSRF_TOKEN()}}"
-						,"id" : $(".button_editar").val() },
+						,"id" : $(this).val() },
 				type : 'POST',
 				dataType : 'json',
 				success: function(respuesta) {
 
 				}
 			});
-			Ofrezco_editar_label
-		  Necesito_editar_label
 		});
 	})
 
