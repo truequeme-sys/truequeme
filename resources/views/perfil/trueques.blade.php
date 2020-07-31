@@ -211,7 +211,7 @@
 			       		<textarea name="Comentario_edit" id="Comentario_edit"  rows="10" cols="50" class="form-control">Comentarios que ayuden a des cribir con más detalle tu trueque</textarea>
 			       	</div>	
 		       </div>
-		       <div class="modal-footer"> <!-- PIE -->
+		       <div class="modal-footer  text-right"> <!-- PIE -->
 		       <button class="btn btn-default btn btn-primary btn-lg" type="submit">Guardar</button>
 		       </div>
 	       </form> 
