@@ -85,6 +85,7 @@ class TruequeController extends Controller
         if ($request->Categoria_editar) {
             $artefacto->categoria_id=$request->Categoria_editar;
         }
+        $artefacto->save();
         return redirect()->route('MisTrueques');
     }
     public function getArtefacto(Request $request)
