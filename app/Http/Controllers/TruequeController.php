@@ -58,6 +58,35 @@ class TruequeController extends Controller
     {
         return 'ok';
     }
+    public function edit(Request $request)
+    {
+        $artefacto=Artefacto::where("id",$request->input("id_edit"))->first();
+
+
+        if( $request->file('foto_edit') ){
+            $foto = $request->user()->id . "." . $request->foto->getClientOriginalExtension();
+            $request->file('foto_edit')->storeAs(
+                'public/fotos', $foto
+            );
+            $artefacto->foto = $foto;
+        }
+        if ($request->Ofrezco_editar==1) {
+            $artefacto->necesita_u_ofrece="ofrece";
+        }
+        if ($request->Necesito_editar==1) {
+            $artefacto->necesita_u_ofrece="necesita";
+        }
+        if ($request->Tipo_editar) {
+            $artefacto->tipo=$request->Tipo_editar;
+        }
+        if ($request->fecha_edit) {
+            $artefacto->validez=$request->fecha_edit;
+        }
+        if ($request->Categoria_editar) {
+            $artefacto->categoria_id=$request->Categoria_editar;
+        }
+        return redirect()->route('MisTrueques');
+    }
     public function getArtefacto(Request $request)
     {
         $artefacto=Artefacto::where("id",$request->input("id"))->first();

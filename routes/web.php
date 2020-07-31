@@ -48,6 +48,7 @@ Route::post('zonas-de-trabajo', 'ZonaTrabajoController@store')->name('zonas-trab
 Route::get('trueques/publicar', 'TruequeController@create')->middleware('auth');
 Route::get('trueques', 'TruequeController@index')->name('trueques.index')->middleware('auth');
 Route::post('/getArtefacto', 'TruequeController@getArtefacto')->name('getArtefacto')->middleware('auth');
+Route::post('/trueque/edit', 'TruequeController@edit')->name('trueque.edit')->middleware('auth');
 
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
