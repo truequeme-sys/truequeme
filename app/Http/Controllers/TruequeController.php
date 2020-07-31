@@ -61,7 +61,7 @@ class TruequeController extends Controller
     public function edit(Request $request)
     {
         $artefacto=Artefacto::where("id",$request->input("id_edit"))->first();
-
+        dd($artefacto);
 
         if( $request->file('foto_edit') ){
             $foto = $request->user()->id . "." . $request->foto->getClientOriginalExtension();
