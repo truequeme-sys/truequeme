@@ -8,6 +8,7 @@ use App\Giro;
 use App\Servicio;
 use App\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TruequeController extends Controller
