@@ -42,7 +42,7 @@
 									        <tr>
 									            <td>{{$artefacto->titulo}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 									            <td>{{$artefacto->categoria->nombre}}</td>
-									            <td>{{$artefacto->necesita_u_ofrece}}</td>
+									            <td>{{$artefacto->necesita_u_ofrece=="ofrece" ? "Ofrezco" : "Necesito"}}</td>
 									            <td>Viernes, 27 de Octubre de 2020</td>
 									            <td>								
 									            	<a href="#" data-toggle="modal" data-target="#modal-trueque-edit" class="social-icon inline-block si-small si-light si-rounded si-icon-line2-user button_editar" value="{{$artefacto->id}}">
