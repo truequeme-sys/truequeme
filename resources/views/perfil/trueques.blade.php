@@ -231,7 +231,8 @@
 		$(".button_editar").click(function() {
 			$.ajax({
 				url: "{{route('getArtefacto')}}",
-				data : { id : $(".button_editar").val() },
+				data : { "_token": "{{CSRF_TOKEN()}}"
+						,id : $(".button_editar").val() },
 				type : 'POST',
 				dataType : 'json',
 				success: function(respuesta) {
