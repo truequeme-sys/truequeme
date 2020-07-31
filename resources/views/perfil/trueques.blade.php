@@ -179,9 +179,7 @@
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Validez:</label>
-		       		<div class="col-12">
-						<input class="form-control" type="date" name="fecha_edit" id="fecha_edit" >
-					</div>
+					<input class="form-control" type="date" name="fecha_edit" id="fecha_edit" >
 		       	</div>
 
 		       	<div class="col-md-12 form-group">
@@ -231,7 +229,7 @@
 					$("#titulo_editar").val(respuesta.titulo);
 					$("#Categoria_editar option[value='"+respuesta.categoria_id+"']").attr("selected",true);
 					$("#Comentario_edit").val(respuesta.comentario);
-					$("#fecha_edit").val(respuesta.validez)
+					$("#fecha_edit").val(respuesta.validez.substring(0,9))
 
 				}
 			});
