@@ -103,9 +103,8 @@
 
 		</section>
 
-	<!-- Modal Window
-	============================================= -->
-
+	<!--============================================= Modal Window ============================================= -->
+	<!--============================================= Nuevo trueque ============================================= -->
 	<div role="dialog" tabindex="-1" class="modal fade" id="modal-trueque"
 	style="max-width:600px;margin-right:auto;margin-left:auto;">
 	   <div class="modal-dialog" role="document">
@@ -119,10 +118,10 @@
 		       		<label>Tipo</label>
 		       		<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
 		       			<label class="btn btn-outline-secondary ls0 nott">
-		       				<input type="radio" name="jobs-application-gender" id="jobs-application-gender-male" autocomplete="off" value="Si"> Ofrezco
+		       				<input type="radio" name="Ofrezco_nuevo" id="Ofrezco_nuevo" autocomplete="off" value="0"> Ofrezco
 		       			</label>
 		       			<label class="btn btn-outline-secondary ls0 nott">
-		       				<input type="radio" name="jobs-application-gender" id="jobs-application-gender-female" autocomplete="off" value="No"> Necesito
+		       				<input type="radio" name="Necesito_nuevo" id="Necesito_nuevo" autocomplete="off" value="0"> Necesito
 		       			</label>
 		       		</div>
 		       	</div>	       	
@@ -162,7 +161,7 @@
 	     </div>
 	   </div>
 	</div>
-
+	<!--============================================= Editar trueque ============================================= -->
 	<div role="dialog" tabindex="-1" class="modal fade" id="modal-trueque-edit"
 	style="max-width:600px;margin-right:auto;margin-left:auto;">
 	   <div class="modal-dialog" role="document">
@@ -175,11 +174,11 @@
 		       	<div class="col-md-12 form-group">
 		       		<label>Tipo</label>
 		       		<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-		       			<label class="btn btn-outline-secondary ls0 nott">
-		       				<input type="radio" name="jobs-application-gender" id="jobs-application-gender-male" autocomplete="off" value="Si"> Ofrezco
+		       			<label  id="Ofrezco_editar_label" class="btn btn-outline-secondary ls0 nott">
+		       				<input type="radio" name="Ofrezco_editar" id="Ofrezco_editar" autocomplete="off"  value="0"> Ofrezco
 		       			</label>
-		       			<label class="btn btn-outline-secondary ls0 nott">
-		       				<input type="radio" name="jobs-application-gender" id="jobs-application-gender-female" autocomplete="off" value="No"> Necesito
+		       			<label id="Necesito_editar_label" class="btn btn-outline-secondary ls0 nott">
+		       				<input type="radio" name="Necesito_editar" id="Necesito_editar" autocomplete="off" value="0"> Necesito
 		       			</label>
 		       		</div>
 		       	</div>	       	
@@ -228,6 +227,21 @@
 @section('scripts')
 
 <script>
+	jQuery(document).ready( function(){
+		$(".button_editar").click(function() {
+			$.ajax({
+				url: "{{route('getArtefacto')}}",
+				data : { id : $(".button_editar").val() },
+				type : 'POST',
+				dataType : 'json',
+				success: function(respuesta) {
+
+				}
+			});
+			Ofrezco_editar_label
+		  Necesito_editar_label
+		});
+	})
 
 </script>
 

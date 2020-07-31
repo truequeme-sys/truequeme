@@ -26,6 +26,7 @@ Route::post('/perfil', 'PerfilController@store')->name('perfil.store')->middlewa
 Route::get('/perfil/editar', 'PerfilController@edit')->name('perfil.edit')->middleware('auth');
 Route::get('/MisTrueques', 'PerfilController@trueques')->name('MisTrueques')->middleware('auth');
 
+
 Route::post('especialidades', 'EspecialidadController@store')->name('especialidades.store')->middleware('auth');
 
 Route::post('certificados', 'CertificadoController@store')->name('certificados.store')->middleware('auth');
@@ -46,5 +47,7 @@ Route::post('zonas-de-trabajo', 'ZonaTrabajoController@store')->name('zonas-trab
 
 Route::get('trueques/publicar', 'TruequeController@create')->middleware('auth');
 Route::get('trueques', 'TruequeController@index')->name('trueques.index')->middleware('auth');
+Route::post('/getArtefacto', 'TruequeController@getArtefacto')->name('getArtefacto')->middleware('auth');
+
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
