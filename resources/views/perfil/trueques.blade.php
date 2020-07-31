@@ -191,7 +191,7 @@
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Comentarios:</label>
-		       		<textarea name="textarea" rows="10" cols="50" class="form-control">Comentarios que ayuden a des cribir con más detalle tu trueque</textarea>
+		       		<textarea name="Comentario_edit" id="Comentario_edit"  rows="10" cols="50" class="form-control">Comentarios que ayuden a des cribir con más detalle tu trueque</textarea>
 		       	</div>	       	
 	       </div>
 	       <div class="modal-footer"> <!-- PIE -->
@@ -227,7 +227,8 @@
 					}
 					$("#titulo_editar").val(respuesta.titulo);
 					$("#Categoria_editar option[value='"+respuesta.categoria_id+"']").attr("selected",true);
-
+					$("#Comentario_edit").val(respuesta.comentario);
+					$("#fecha_edit").val(respuesta.validez)
 
 				}
 			});
