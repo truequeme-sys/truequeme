@@ -187,7 +187,6 @@
 	       </div>
 	       <form class="row" action="{{route('trueque.edit')}}" method="post" enctype="multipart/form-data">
 	       	@csrf
-	       	<input type="hidden" name="id_edit" id="id_edit" >
 	       		<div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
 	                
 		       		
