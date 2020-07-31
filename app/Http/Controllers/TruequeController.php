@@ -61,7 +61,7 @@ class TruequeController extends Controller
     public function getArtefacto(Request $request)
     {
         $artefacto=Artefacto::where("id",$request->input("id"))->first();
-        //dd($request->input("id"));
+        dd($request->input("id"));
         return response()->json($artefacto);
     }
 }
