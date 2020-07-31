@@ -238,6 +238,14 @@
 				}
 			});
 		});
+		$("#Ofrezco_editar").click(function() {
+			$("#Ofrezco_editar").val(1);
+			$("#Necesito_editar").val(0);
+		});
+		$("#Necesito_editar").click(function() {
+			$("#Ofrezco_editar").val(0);
+			$("#Necesito_editar").val(1);
+		});
 	})
 
 </script>
