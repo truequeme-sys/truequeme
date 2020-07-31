@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Empresa;
 use App\User;
+use App\Artefacto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -61,7 +62,10 @@ class PerfilController extends Controller
     public function trueques()
     {
         $user= Auth::user();
-       return view('perfil.trueques');
+        $artefactos = Artefacto::orderBy('created_at', 'desc');
+        $artefactos->where('user_id',$user->id );
+
+       return view('perfil.trueques', compact('artefactos'));
         # code...
     }
 }
