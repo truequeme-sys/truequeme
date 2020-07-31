@@ -229,7 +229,7 @@
 					$("#titulo_editar").val(respuesta.titulo);
 					$("#Categoria_editar option[value='"+respuesta.categoria_id+"']").attr("selected",true);
 					$("#Comentario_edit").val(respuesta.comentario);
-					$("#fecha_edit").val(respuesta.validez.substring(0,9))
+					$("#fecha_edit").val(respuesta.validez.substring(0,10))
 
 				}
 			});
