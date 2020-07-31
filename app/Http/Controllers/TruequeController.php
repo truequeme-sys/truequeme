@@ -61,7 +61,7 @@ class TruequeController extends Controller
         $artefacto= new Artefacto(
             array(
                   'user_id'=> $user->id ,
-                  'empresa_id'=>$request->empresa,
+                  'empresa_id'=>$request->empresa_nuevo,
                   'titulo' => $request->titulo_nuevo,
                   'validez'=>$request->fecha_nuevo,
                   'categoria_id'=>$request->Categoria_nuevo,
