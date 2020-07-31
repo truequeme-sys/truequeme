@@ -20,7 +20,7 @@
                         <div class="col-12 form-group">
                             <div class="row">
                                 <div class="col-md-12 form-group" style="text-align: center;">
-                                    <img src="{{ $user->foto ? asset("storage/fotos/" . $user->foto) : url('images/userPicture.png')}}"
+                                    <img src="{{ $user->foto ? asset($user->foto) : url('images/userPicture.png')}}"
                                         alt="Truequeme" width="200px" height="200px">
                                 </div>
                                 <div class="col-md-12 form-group">
