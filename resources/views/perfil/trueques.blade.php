@@ -113,7 +113,22 @@
 	       <h4 class="text-center modal-title">Trueque Nuevo</h4>
 	       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 	       </div>
+	       <form class="row" action="{{route('trueque.edit')}}" method="post" enctype="multipart/form-data">
+	       	@csrf
 	       <div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
+	       	<div class="col-md-12 form-group">
+		       		<label>Empresa:</label>
+		       		<select class="select-1 form-control" style="width:100%;" id="empresa_nuevo" name="empresa_nuevo">
+		       			@foreach ($empresas as $empresa)
+		       				<option value="{{$empresa->id}}">{{$empresa->razon_social}}</option>
+						@endforeach
+					</select>
+		       	</div>
+	       		<div class="col-md-12 form-group">
+                        <label>Subir imagen:</label>
+                        <input type="file" id="jobs-application-resume" name="foto_nuevo"
+                            class="file-loading required" data-show-preview="false" />
+                    </div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Tipo</label>
 		       		<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
@@ -127,15 +142,22 @@
 		       	</div>	       	
 		       	<div class="col-md-12 form-group">
 		       		<label>Título:</label>
-		       		<input type="text" name="jobs-application-name" id="jobs-application-name" class="form-control required" value="" placeholder="Nombre del servicio o producto">
+		       		<input type="text" name="titulo_nuevo" id="jobs-application-name" class="form-control required" value="" placeholder="Nombre del servicio o producto">
+		       	</div>
+		       	<div class="col-md-12 form-group">
+		       		<label>Tipo:</label>
+		       		<select class="select-1 form-control" style="width:100%;" id="Tipo_nuevo" name="Tipo_nuevo">
+		       			<option value="servicio">Servicio</option>
+		       			<option value="producto">Producto</option>
+					</select>
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Validez:</label>
-		       		<input type="text" name="jobs-application-name" id="jobs-application-name" class="form-control required" value="" placeholder="Fecha">
+		       		<input type="text" name="fecha_nuevo" id="jobs-application-name" class="form-control required" value="" placeholder="Fecha">
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Categoría:</label>
-		       		<select class="select-1 form-control" style="width:100%;">
+		       		<select class="select-1 form-control" style="width:100%;" name="Categoria_nuevo">
 						@foreach ($categorias as $categoria)
 		       				<option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
 						@endforeach
@@ -143,7 +165,7 @@
 		       	</div>
 		       	<div class="col-md-12 form-group">
 		       		<label>Comentarios:</label>
-		       		<textarea name="textarea" rows="10" cols="50" class="form-control">Comentarios que ayuden a des cribir con más detalle tu trueque</textarea>
+		       		<textarea name="Comentario_nuevo" rows="10" cols="50" class="form-control">Comentarios que ayuden a des cribir con más detalle tu trueque</textarea>
 		       	</div>	       	
 	       </div>
 	       <div class="modal-footer"> <!-- PIE -->
@@ -167,9 +189,10 @@
 	       		<div class="modal-body"> <!-- CUERPO DEL MENSAJE -->
 	                
 		       		<div class="col-md-12 form-group">
-	                    <label>Subir imagen:</label>
-	                    <input type="file" id="foto_edit" name="foto_edit"class="file-loading required" data-show-preview="false">
-	                </div>
+                        <label>Subir imagen:</label>
+                        <input type="file" id="jobs-application-resume" name="foto_edit"
+                            class="file-loading required" data-show-preview="false" />
+                    </div>
 			       	<div class="col-md-12 form-group">
 			       		<label>Tipo</label>
 			       		<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
@@ -265,6 +288,24 @@
 			$("#Ofrezco_editar").val(0);
 			$("#Necesito_editar").val(1);
 		});
+		$("#Ofrezco_nuevo").click(function() {
+			$("#Ofrezco_nuevo").val(1);
+			$("#Necesito_nuevo").val(0);
+		});
+		$("#Necesito_nuevo").click(function() {
+			$("#Ofrezco_nuevo").val(0);
+			$("#Necesito_nuevo").val(1);
+		});
+		$(".button_eliminar").click(function() {
+			$.ajax({
+				url: "{{route('eliminarArtefacto')}}",
+				data : { "_token": "{{CSRF_TOKEN()}}"
+						,"id" : $(this).data('value') },
+				type : 'POST',
+				dataType : 'json'
+			});
+		});
+		
 	})
 
 </script>

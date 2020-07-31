@@ -56,7 +56,33 @@ class TruequeController extends Controller
 
     public function create()
     {
-        return 'ok';
+        $user= Auth::user();
+        $artefacto= new Artefacto(
+            array(
+                  'user_id'=> $user->id ,
+                  'empresa_id'=>$request->empresa;
+                  'titulo' => $request->titulo_nuevo,
+                  'validez'=>$request->fecha_nuevo,
+                  'categoria_id'=>$request->Categoria_nuevo,
+                  'comentario'=>$request->Comentario_nuevo,
+                  'tipo'=>$request->Tipo_nuevo);
+        );
+        if ($request->Ofrezco_editar==1) {
+            $artefacto->necesita_u_ofrece="ofrece";
+        }
+        if ($request->Necesito_editar==1) {
+            $artefacto->necesita_u_ofrece="necesita";
+        }
+
+        if( $request->file('foto_nuevo') ){
+            $foto = $request->user()->id . "." . $request->foto->getClientOriginalExtension();
+            $request->file('foto_nuevo')->storeAs(
+                'public/fotos', $foto
+            );
+            $artefacto->foto = $foto_nuevo;
+        }
+        $artefacto->save();
+        return redirect()->route('MisTrueques');
     }
     public function edit(Request $request)
     {
@@ -85,8 +111,16 @@ class TruequeController extends Controller
         if ($request->Categoria_editar) {
             $artefacto->categoria_id=$request->Categoria_editar;
         }
+        if ($request->Comentario_edit) {
+            $artefacto->comentario=$request->Comentario_edit;
+        }
         $artefacto->save();
         return redirect()->route('MisTrueques');
+    }
+    public function EliminarArtefacto(Request $request)
+    {
+        $artefacto=Artefacto::where("id",$request->input("id"))->first();
+        $artefacto->delete();
     }
     public function getArtefacto(Request $request)
     {

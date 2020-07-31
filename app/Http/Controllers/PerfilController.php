@@ -66,7 +66,8 @@ class PerfilController extends Controller
         $artefactos = Artefacto::orderBy('created_at', 'desc');
         $artefactos=$artefactos->where('user_id',$user->id )->get();
         $categorias=Categoria::get();
-       return view('perfil.trueques', compact('artefactos','categorias'));
+        $empresas=Auth::user()->empresas()->get();
+       return view('perfil.trueques', compact('artefactos','categorias','empresas'));
         # code...
     }
 }
